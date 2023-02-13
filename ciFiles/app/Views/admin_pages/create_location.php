@@ -4,6 +4,7 @@
 
         <h1 class="page-title"><?php echo $title; ?></h1>
 
+       
         <p class="text-danger">
 
             <?php
@@ -21,19 +22,16 @@
                 }
             ?>
         </p>
-
        
-        <a href="<?php echo site_url("manage/trip-categories") ?>" class="btn btn-primary">Back to Trip Categories</a>
+        <a href="<?php echo site_url('manage/locations'); ?>" class="btn btn-primary">Back to Locations</a>
 
-        <br><br>
-
-            <?php echo form_open_multipart(site_url("create/trip-category")); ?>
+        <form enctype="multipart/form-data" action="<?php echo site_url('locations/create'); ?>" method="post">
 
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text"
                 class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="">
-                <small id="helpId" class="form-text text-muted">Public Name of the trip category</small>
+                <small id="helpId" class="form-text text-muted">Public Name of the trip Category</small>
             </div>
 
             <div class="mb-3">
@@ -44,22 +42,29 @@
             </div>
 
             <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                <textarea class="form-control ckeditor" name="description" id="description" rows="3"></textarea>
-                <small>Enter Description</small>
+              <label for="description" class="form-label">Description</label>
+              <textarea class="form-control ckeditor" name="description" id="description" rows="3"></textarea>
             </div>
 
             <div class="mb-3">
               <label for="" class="form-label">Featured Image</label>
-              <input type="file" class="form-control" name="featured_image" accept="image/*">
-              <div id="fileHelpId" class="form-text">Select a featured image</div>
+              <input type="file" class="form-control" name="featured_image" accept="image/*" id="featured_image" aria-describedby="fileHelpId">
+              <div id="fileHelpId" class="form-text">Select a featured Image to appear throughout the website</div>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="" class="form-label">Thumbnail Image</label>
+                <input type="file" class="form-control" name="thumbnail_image" accept="image/*" id="thumbnail_image" aria-describedby="fileHelpId">
+                <div id="fileHelpId" class="form-text">Select a thumbnail Image to appear on mobile</div>
             </div>
 
             <div class="mb-3">
               <label for="" class="form-label">Banner Image</label>
-              <input type="file" class="form-control" name="banner_image" accept="image/*">
-              <div id="fileHelpId" class="form-text">Select a banner image</div>
+              <input type="file" class="form-control" name="banner_image" accept="image/*" id="banner_image" aria-describedby="fileHelpId">
+              <div id="fileHelpId" class="form-text">Select a featured Image to appear throughout the website</div>
             </div>
+
 
             <button type="submit" class="btn btn-primary">Create</button>
 

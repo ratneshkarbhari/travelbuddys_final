@@ -94,3 +94,9 @@ body {
   .page-content{
     margin-bottom: 2em;
   }
+  ul.pagination li{margin-right: 3%;}
+  ul.pagination li a{
+    padding: 1em;
+    background-color: #333;
+    color: #fff;
+  }

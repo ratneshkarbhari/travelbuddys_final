@@ -57,10 +57,18 @@ $routes->post("/create/trip-category","TripCategories::create");
 $routes->post("/update/trip-category","TripCategories::update");
 $routes->post("/delete/trip-categories","TripCategories::delete");
 
+$routes->get("/manage/trips","Trips::manage");
+$routes->get("/add/trips","Trips::add");
+$routes->get("/edit/trip/(:any)","Trips::edit/$1");
 
-$routes->get("/locations/manage","Locations::manage");
-$routes->get("/locations/add","Locations::add");
-$routes->get("/locations/edit","Locations::edit");
+$routes->post("/create/trip","Trips::create");
+$routes->post("/update/trip","Trips::update");
+$routes->post("/delete/trips","Trips::delete");
+
+
+$routes->get("/manage/locations","Locations::manage");
+$routes->get("/add/locations","Locations::add");
+$routes->get("/edit/locations","Locations::edit");
 
 $routes->post("/locations/create","Locations::create");
 $routes->post("/locations/update","Locations::update");

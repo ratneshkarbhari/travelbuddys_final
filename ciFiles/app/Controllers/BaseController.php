@@ -28,13 +28,13 @@ abstract class BaseController extends Controller
     protected $cache;
     protected $db;
     protected $session;
-
+    protected $form_helper;
 
     public function __construct() {
         $this->pageLoader = new PageLoader();
         $this->cache = \Config\Services::cache();
         $this->db = \Config\Database::connect();
-        helper('form');
+        $this->form_helper = helper('form');
         $this->session = session();
     }
 

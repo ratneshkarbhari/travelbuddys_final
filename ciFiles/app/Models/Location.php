@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class LocationModel extends Model
+class Location extends Model
 {
 
     protected $table = "locations";

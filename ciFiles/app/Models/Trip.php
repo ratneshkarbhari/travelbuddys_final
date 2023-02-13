@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class TripModel extends Model
+class Trip extends Model
 {
 
     protected $table = "trips";

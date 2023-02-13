@@ -129,7 +129,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('trips/manage'); ?>">
+            <a class="nav-link" href="<?php echo site_url('manage/trips'); ?>">
               <span class="align-text-bottom"></span>
               Trips
             </a>
@@ -141,7 +141,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('locations/manage'); ?>">
+            <a class="nav-link" href="<?php echo site_url('manage/locations'); ?>">
               <span class="align-text-bottom"></span>
               Locations
             </a>

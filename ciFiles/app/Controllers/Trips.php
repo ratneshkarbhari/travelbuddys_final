@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\Trip;
 use App\Libraries\PageLoader;
 
 class Trips extends BaseController
@@ -28,6 +29,38 @@ class Trips extends BaseController
         ];
         
         $this->pageLoader->public_page("home",$data);
+
+    }
+
+    public function manage()
+    {
+
+        $this->auth();
+        helper("form");
+        
+        $tripModel = new Trip();
+
+        $data = [
+            "title" => "Manage Trips",
+            'trips' => $tripModel->paginate(10),
+            'pager' => $tripModel->pager,
+        ];
+
+        $this->pageLoader->admin_page("trips",$data);
+
+    }
+    
+    function add(){
+        $this->auth();
+        helper("form");
+        $tripCategoryModel = new Trip();
+
+        $data = [
+            "title" => "Add Trip",
+            'trips' => $tripCategoryModel->findAll(),
+        ];
+
+        $this->pageLoader->admin_page("create_trip",$data);
 
     }
 }

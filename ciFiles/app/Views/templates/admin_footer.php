@@ -10,7 +10,7 @@
       <script src="https://cdn.ckeditor.com/ckeditor5/35.4.0/classic/ckeditor.js"></script>
 
       <script>
-        var allEditors = document.querySelectorAll('textarea');
+        var allEditors = document.querySelectorAll('.ckeditor');
         for (var i = 0; i < allEditors.length; ++i) {
           ClassicEditor.create(allEditors[i]);
         }
