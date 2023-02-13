@@ -187,4 +187,24 @@ class Locations extends BaseController
         }
     }
 
+    function delete(){
+        $this->auth();
+        $locationModel = new Location();
+        $location = $locationModel->find($this->request->getPost("location_id"));
+        $assetUrls = [];
+        $assetUrls[] = "./assets/images/locations/".$location["featured_image"];
+        $assetUrls[] = "./assets/images/locations/".$location["banner_image"];
+        $assetUrls[] = "./assets/images/locations/".$location["thumbnail"];
+        if($locationModel->delete($this->request->getPost("location_id"))){
+            foreach($assetUrls as $assetUrl){
+                if(is_file($assetUrl)){
+                    unlink($assetUrl);
+                }
+            }
+            return(redirect()->to(site_url("manage/locations?success_message=Location deleted successfully")));
+        }else{
+            return(redirect()->to(site_url("manage/locations?error_message=Location not deleted")));
+        }
+    }
+
 }

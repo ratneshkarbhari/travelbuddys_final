@@ -66,8 +66,8 @@
                                     </div>
                                     <div class="modal-body">
                                         <p>Are you sure you want to delete this Trip Category?</p>
-                                    <?php echo form_open(site_url("delete/trip-categories")); ?>
-                                        <input type="hidden" name="tcid" value="<?php echo $location["id"] ?>">
+                                    <?php echo form_open(site_url("locations/delete")); ?>
+                                        <input type="hidden" name="location_id" value="<?php echo $location["id"] ?>">
                                     </div>
                                     <div class="modal-footer">
                                     <button type="submit" class="btn btn-danger">Confirm </button>
