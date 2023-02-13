@@ -6,20 +6,20 @@
 
         <p class="text-danger">
 
-            <?php
-                if(isset($error_message)){
-                    echo $error_message;
-                }
-            ?>
+        <?php
+            if(isset($_GET["error_message"])){
+                echo $_GET["error_message"];
+            }
+        ?>
 
         </p>
 
         <p class="text-success">
-            <?php
-                if(isset($success_message)){
-                    echo $success_message;
-                }
-            ?>
+        <?php
+            if(isset($_GET["success_message"])){
+                echo $_GET["success_message"];
+            }
+        ?>
         </p>
 
        
@@ -30,7 +30,7 @@
             <?php echo form_open_multipart(site_url("update/trip-category")); ?>
 
 
-            <input type="hidden" name="trip_category_id" value="<?php echo $trip_category["id"]; ?>">
+        <input type="hidden" name="tcid" value="<?php echo $trip_category["id"]; ?>">
 
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
@@ -57,6 +57,15 @@
             <div class="mb-3">
               <label for="" class="form-label">Featured Image</label>
               <input type="file" class="form-control" name="featured_image" accept="image/*">
+              <div id="fileHelpId" class="form-text">Select a featured image</div>
+            </div>
+
+
+            <img src="<?php echo site_url("assets/images/trip_categories/".$trip_category["banner_image"]); ?>" style="width: 30px; height: 30px;">
+
+            <div class="mb-3">
+              <label for="" class="form-label">Banner Image</label>
+              <input type="file" class="form-control" name="banner_image" accept="image/*">
               <div id="fileHelpId" class="form-text">Select a featured image</div>
             </div>
 

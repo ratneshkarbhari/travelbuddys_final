@@ -54,8 +54,8 @@ $routes->get("/add/trip-category","TripCategories::add");
 $routes->get("/edit/trip-category/(:any)","TripCategories::edit/$1");
 
 $routes->post("/create/trip-category","TripCategories::create");
-$routes->post("/trip-categories/update","TripCategories::update");
-$routes->post("/trip-categories/delete","TripCategories::delete");
+$routes->post("/update/trip-category","TripCategories::update");
+$routes->post("/delete/trip-categories","TripCategories::delete");
 
 
 $routes->get("/locations/manage","Locations::manage");

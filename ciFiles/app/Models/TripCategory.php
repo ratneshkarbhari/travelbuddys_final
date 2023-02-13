@@ -9,7 +9,7 @@ class TripCategory extends Model
 
     protected $primaryKey = 'id';
 
-    protected $allowedFields = ['title','slug','featured_image','banner_image','trips'];
+    protected $allowedFields = ['title','slug','featured_image','banner_image','description','trips'];
 
 
 }

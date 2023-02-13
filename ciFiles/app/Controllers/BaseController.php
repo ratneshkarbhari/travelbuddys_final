@@ -38,6 +38,13 @@ abstract class BaseController extends Controller
         $this->session = session();
     }
 
+    public function auth()
+    {
+        $session = session();
+        if ($session->get("first_name")==NULL) {
+            return redirect()->to(site_url("login?error=You are not logged in"));
+        }
+    }
 
     /**
      * Instance of the main Request object.

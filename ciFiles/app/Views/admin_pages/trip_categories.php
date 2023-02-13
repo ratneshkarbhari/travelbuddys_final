@@ -4,13 +4,13 @@
 
         <h1 class="page-title"><?php echo $title; ?></h1>
 
-        <p class="text-danger"><?php if (isset($error_message)) {
-            echo $error_message;
+        <p class="text-danger"><?php if (isset($_GET["error_message"])) {
+            echo $_GET["error_message"];
         } ?></p>
 
 
-        <p class="text-success"><?php if (isset($success_message)) {
-            echo $success_message;
+        <p class="text-success"><?php if (isset($_GET["success_message"])) {
+            echo $_GET["success_message"];
         } ?></p>
 
 
@@ -50,7 +50,7 @@
                             <a href="<?php  echo site_url('/edit/trip-category/'.$trip_category["slug"]) ?>" class="btn btn-info">Edit</a>
 
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#"<?php echo $trip_category["slug"] ?>">
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#<?php echo $trip_category["slug"] ?>">
                                 Delete
                             </button>
                             
@@ -66,13 +66,12 @@
                                     </div>
                                     <div class="modal-body">
                                         <p>Are you sure you want to delete this Trip Category?</p>
-                                    <form action="<?php  echo site_url("trip-categories/delete") ?>" method="post">
-                                        @csrf
-                                        <input type="hidden" name="category_id" value="<?php echo $trip_category["id"] ?>">
+                                    <?php echo form_open(site_url("delete/trip-categories")); ?>
+                                        <input type="hidden" name="tcid" value="<?php echo $trip_category["id"] ?>">
                                     </div>
                                     <div class="modal-footer">
                                     <button type="submit" class="btn btn-danger">Confirm </button>
-                                    </form>
+                                    <?php echo form_close(); ?>
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>

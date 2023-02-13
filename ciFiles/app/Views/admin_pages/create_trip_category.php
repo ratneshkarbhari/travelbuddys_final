@@ -23,7 +23,7 @@
         </p>
 
        
-        <a href="<?php echo site_url("manage-trip-categories") ?>" class="btn btn-primary">Back to Trip Categories</a>
+        <a href="<?php echo site_url("manage/trip-categories") ?>" class="btn btn-primary">Back to Trip Categories</a>
 
         <br><br>
 
