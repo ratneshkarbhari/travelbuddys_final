@@ -13,7 +13,8 @@
 
         public function admin_page($view,$data){
             $session = session();
-            if ($session->get("first_name")==NULL) {
+            $fname = $session->get("first_name");
+            if (!isset($fname)) {
                 return redirect()->to(site_url("login?error=You are not logged in"));
             }
             echo view("templates/admin_header",$data);

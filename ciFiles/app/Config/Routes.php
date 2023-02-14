@@ -74,13 +74,7 @@ $routes->post("/locations/create","Locations::create");
 $routes->post("/locations/update","Locations::update");
 $routes->post("/locations/delete","Locations::delete");
 
-$routes->get("/trips/manage","Trips::manage");
-$routes->get("/trips/add","Trips::add");
-$routes->get("/trips/edit","Trips::edit");
 
-$routes->post("/trips/create","Trips::create");
-$routes->post("/trips/update","Trips::update");
-$routes->post("/trips/delete","Trips::delete");
 
 
 $routes->get("/testimonials/manage","Testimonials::manage");

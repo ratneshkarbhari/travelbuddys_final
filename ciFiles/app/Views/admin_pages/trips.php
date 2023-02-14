@@ -47,7 +47,7 @@
                         </th>
                         <td>
 
-                            <a href="<?php  echo site_url('/edit/trip-category/'.$trip["slug"]) ?>" class="btn btn-info">Edit</a>
+                            <a href="<?php  echo site_url('/edit/trip/'.$trip["slug"]) ?>" class="btn btn-info">Edit</a>
 
                             <!-- Button trigger modal -->
                             <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#<?php echo $trip["slug"] ?>">
@@ -95,6 +95,10 @@
 
 
         
+        <div class="pagination">
+            <?= $pager->links() ?>
+        </div>
+
 
         
 

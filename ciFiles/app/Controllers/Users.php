@@ -35,7 +35,8 @@ class Users extends BaseController
                 $this->session->set([
                     "first_name" => $user["first_name"],
                     "last_name" => $user["last_name"],
-                    "email" => $user["email"]
+                    "email" => $user["email"],
+                    "role" => "admin"
                 ]);
 
                 return redirect()->to(site_url("dashboard"));
@@ -57,6 +58,13 @@ class Users extends BaseController
         $this->pageLoader->admin_page("dashboard",[
             "title" => "Admin Dashboard"
         ]);
+
+    }
+
+    function logout(){
+        $session = session();
+        $session->destroy();
+        return redirect()->to(site_url("login?success=You have been logged out"));
 
     }
 

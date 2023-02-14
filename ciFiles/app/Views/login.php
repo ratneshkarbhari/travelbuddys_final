@@ -14,7 +14,15 @@
                     if (isset($_GET["error"])) {
                         echo $_GET["error"];
                     }
+                    
                     ?> 
+                </p>
+                <p class="text-success text-center">
+                    <?php
+                        if (isset($_GET["success"])) {
+                            echo $_GET["success"];
+                        }
+                    ?>
                 </p>
 
                 <?php echo form_open(site_url("authenticate")); ?>

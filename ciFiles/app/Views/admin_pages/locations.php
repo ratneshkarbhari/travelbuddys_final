@@ -97,6 +97,10 @@
         
 
         
+        <div class="pagination">
+            <?= $pager->links() ?>
+        </div>
+
 
 
     </div>

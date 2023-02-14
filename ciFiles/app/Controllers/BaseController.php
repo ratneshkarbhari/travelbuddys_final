@@ -41,7 +41,8 @@ abstract class BaseController extends Controller
     public function auth()
     {
         $session = session();
-        if ($session->get("first_name")==NULL) {
+        $fname = $session->get("first_name");
+        if (!isset($fname)) {
             return redirect()->to(site_url("login?error=You are not logged in"));
         }
     }
