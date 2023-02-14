@@ -374,4 +374,27 @@ class Trips extends BaseController
         }
     }
 
+    function delete(){
+        $this->auth();
+        $tripID = $this->request->getPost("trip_id");
+        $tripModel = new Trip();
+        $tcModel = new TripCategory();
+        if ($tripModel->delete($tripID)) {
+            foreach($tcModel->findAll() as $trip_category){
+                $tripsArray = json_decode($trip_category["trips"],TRUE);
+                if(in_array($tripID,$tripsArray)){
+                    $key = array_search($tripID,$tripsArray);
+                    unset($tripsArray[$key]);
+                    $tripsJson = json_encode($tripsArray);
+                    $tcModel->update($trip_category["id"],["trips"=>$tripsJson]);
+                }
+                $key = "";
+            }
+
+            return redirect()->to(site_url("manage/trips/?success_message=Trip deleted"));
+        } else {
+            return redirect()->to(site_url("manage/trips/?success_message=Trip not deleted"));
+        }
+    }
+
 }
