@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\TripCategoryModel;
+use App\Models\TripCategory;
 
 class CacheController extends BaseController
 {
@@ -25,7 +25,7 @@ class CacheController extends BaseController
 
         $cache->save('trips',$trips,3600*24*365);
 
-        $tcModel = new TripCategoryModel();
+        $tcModel = new TripCategory();
 
         $allTripCategories = $tcModel->findAll();
         $cache->save('trip_categories',$allTripCategories,3600*24*365);

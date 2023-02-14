@@ -1,8 +1,19 @@
+<script src="<?php echo site_url('assets/js/jquery-3.6.1.min.js'); ?>" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+
+<script src="<?php echo site_url("assets/js/bootstrap.min.js"); ?>"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.js" integrity="sha512-UU0D/t+4/SgJpOeBYkY+lG16MaNF8aqmermRIz8dlmQhOlBnw6iQrnt4Ijty513WB3w+q4JO75IX03lDj6qQNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+<script src="<?php echo site_url("assets/js/app.min.js"); ?>"></script>
 
 
 
 <a class="d-none d-lg-block whatsappLink " target="_blank" href="https://api.whatsapp.com/send?phone=919967491105 6&text=Tell me more about your trips" id="wa-desktop" class="whatsappLink">
-    <img src="<?php  echo site_url("assets/images/wa.png"); ?> " style="width: 60px;
+    <img src="<?php echo site_url("assets/images/wa.png"); ?> " style="width: 60px;
 height: 60px;
 z-index: 900;
 position: fixed;
@@ -10,7 +21,7 @@ right: 1em;
 bottom: 8em;">
 </a>
 <a target="_blank" href="https://api.whatsapp.com/send?phone=919967491105 6&text=Tell me more about your trips" id="wa-touch" class="whatsappLink d-block d-lg-none">
-    <img src="<?php  echo site_url('assets/images/wa.png'); ?> " style="width: 60px;
+    <img src="<?php echo site_url('assets/images/wa.png'); ?> " style="width: 60px;
 height: 60px;
 position: fixed;
 right: 1.5em;
@@ -26,10 +37,10 @@ bottom: 8em;">
                 <h3 class="footer-link-title">Quick Links</h3>
                 <ul class="footer-link-list">
                     <li>
-                        <a href="<?php  echo site_url('') ?> ">Home</a>
+                        <a href="<?php echo site_url('') ?> ">Home</a>
                     </li>
                     <li>
-                        <a href="<?php  echo site_url('all-trips') ?> ">All Trips</a>
+                        <a href="<?php echo site_url('all-trips') ?> ">All Trips</a>
                     </li>
                     <li>
                         <a href="{{url('about')?> ">About</a>
@@ -85,10 +96,10 @@ bottom: 8em;">
                 <h3 class="footer-link-title">QUICK MENU</h3>
                 <ul class="footer-link-list">
                     <li>
-                        <a href="<?php  echo site_url('') ?> ">Home</a>
+                        <a href="<?php echo site_url('') ?> ">Home</a>
                     </li>
                     <li>
-                        <a href="<?php  echo site_url('all-trips') ?> ">All Trips</a>
+                        <a href="<?php echo site_url('all-trips') ?> ">All Trips</a>
                     </li>
                     <li>
                         <a href="{{url('about')?> ">About</a>

@@ -31,9 +31,20 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 // Public Routes
+
 $routes->get('/', 'Trips::index');
-$routes->get('/all-trips', 'Trips::show_all');
-$routes->get('/trips/(:any)', 'Trips::show_trip/$1');
+$routes->get('/all-trips', 'PageLoader::all_trips');
+$routes->get('/trip-categories/(:any)', 'PageLoader::trip_category/$1');
+$routes->get('/locations/(:any)', 'PageLoader::location/$1');
+$routes->get('/trips/(:any)', 'PageLoader::trip/$1');
+$routes->get('/universal-search', 'PageLoader::trip_search');
+$routes->get("/about","PageLoader::about");
+$routes->get("/contact","PageLoader::contact");
+$routes->post('/create-lead', 'Leads::create_lead');
+$routes->get("/trip-search", "PageLoader::search");
+$routes->post("/send-contact-email","Leads::send_contact_email");
+$routes->get("/rebuild-cache" , "CacheController::rebuild");
+
 
 $routes->get('/login', 'Users::login');
 $routes->post('/authenticate', 'Users::authenticate');
