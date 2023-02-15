@@ -384,16 +384,26 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper container">
 
-                        
-                        <?php foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
+                        <?php  foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
 
-                            
-                            
+                            <?php if(count($trip)>1): ?>
+
+                            <?php foreach($trips as $trip): ?>
+
+                                <div class="swiper-slide text-center trip-card"> <a href="<?php  echo site_url('trips/'.$trip->slug); ?>"> <img class="trip-card-image lazy" src="<?php  echo site_url('assets/images/placeholder.png'); ?>" data-src="<?php  echo site_url('assets/images/trips/'.$trip->featured_image); ?>"> <div class="trip-meta"> <span class="location"><img src="<?php  echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon"> <?php echo $trip->location ; ?></span> <span class="duration"><img src="<?php  echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon"> <?php echo $trip->duration ; ?></span> </div> <h2 class="trip-title"><?php echo $trip->title ; ?></h2> </a> </div>
 
 
-                        
+                            <?php endforeach; ?>
 
+                            <?php else: $trip = $trip[0]; ?>
+                           
+                            <div class="swiper-slide text-center trip-card"> <a href="<?php  echo site_url('trips/'.$trip->slug); ?>"> <img class="trip-card-image lazy" src="<?php  echo site_url('assets/images/placeholder.png'); ?>" data-src="<?php  echo site_url('assets/images/trips/'.$trip->featured_image); ?>"> <div class="trip-meta"> <span class="location"><img src="<?php  echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon"> <?php echo $trip->location ; ?></span> <span class="duration"><img src="<?php  echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon"> <?php echo $trip->duration ; ?></span> </div> <h2 class="trip-title"><?php echo $trip->title ; ?></h2> </a> </div>
+
+
+                            <?php endif; ?>
                         <?php  endforeach; ?>
+
+
 
                     </div>
                     <!-- If we need pagination -->
