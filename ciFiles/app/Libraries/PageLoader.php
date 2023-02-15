@@ -5,7 +5,7 @@
     class PageLoader {
         
         public function public_page($view,$data){
-
+ 
             echo view("templates/header",$data);
             echo view("pages/".$view,$data);
             echo view("templates/footer",$data);

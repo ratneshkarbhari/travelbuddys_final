@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" integrity="sha512-UiVP2uTd2EwFRqPM4IzVXuSFAzw+Vo84jxICHVbOA1VZFUyr4a6giD9O3uvGPFIuB2p3iTnfDVLnkdY7D/SJJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <main id="trip" class="page-content">
 
 
@@ -125,7 +126,7 @@
                                 <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
                                     tabindex="0">
                                     
-                                    <?php $parts = explode("|",$focus_trip["dates"]); foreach ($parts as $part): ?>
+                                    <?php $parts = explode(",",$focus_trip["dates"]); foreach ($parts as $part): ?>
                                         <div class="date-box">
                                         <?php echo $part; ?></div>
                                     <?php endforeach; ?>
@@ -164,14 +165,17 @@
                             <h4>Photos</h4>
 
                             <?php
-                                $gallery_images = json_decode($focus_trip["gallery_images"],TRUE);
+                                $gallery_images = explode(",",$focus_trip["gallery_images"]);
+
                             ?>
 
                             <div class="swiper swiper-trips d-none d-lg-block">
                                 <!-- Additional required wrapper -->
                                 <div class="swiper-wrapper container">
 
-                                    <?php foreach($gallery_images as $gallery_image): ?>
+                                    
+
+                                    <?php if(is_array($gallery_images)): foreach($gallery_images as $gallery_image): ?>
 
                                                 
                                     <div class="swiper-slide text-center trip-card">
@@ -185,7 +189,7 @@
                                     </div>
 
                                         
-                                    <?php endforeach; ?>
+                                    <?php  endforeach; endif; ?>
 
             
             
@@ -206,7 +210,7 @@
                                 <div class="swiper-wrapper container">
             
 
-                                    <?php foreach($gallery_images as $gallery_image): ?>
+                                    <?php if(is_array($gallery_images)):  foreach($gallery_images as $gallery_image): ?>
 
                                                 
                                     <div class="swiper-slide text-center trip-card">
@@ -220,7 +224,7 @@
                                     </div>
 
                                         
-                                    <?php endforeach; ?>
+                                    <?php  endforeach; endif; ?>
 
                                 </div>
                                 <!-- If we need pagination -->
@@ -254,6 +258,7 @@
                                 foreach ($videos as $video) {
                                 
                                     $linkParts = parse_url($video);
+
 
                                     $videoIds[] = str_replace("v=","",$linkParts["query"]);
 
@@ -567,7 +572,7 @@
                     <label>Select a date</label>
                     <br>
                     <?php foreach($parts as $part): ?>
-                        <input class="form-check-input" type="radio" name="date" id="date" value="<?php $part ?>" required>
+                        <input class="form-check-input" type="radio" name="date" id="date" value="<?php echo $part ?>" required>
                         <label class="form-check-label" for=""><?php echo $part ?></label>
                     <?php endforeach; ?>    
                     <span class="visually-hidden">Destination</span></label><input name="destination" type="text" class="form-control" id="destination" placeholder="Destination...">
