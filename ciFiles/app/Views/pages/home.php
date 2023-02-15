@@ -22,8 +22,7 @@
 
             <div class="video-container">
                 <div class="color-overlay"></div>
-                <video poster="<?php echo
-                site_url("assets/images/trip_bg.jpg"); ?>" autoplay loop muted src="<?php echo site_url("assets/videos/video.mp4"); ?>" type="video/mp4">
+                <video autoplay loop muted src="<?php echo site_url("assets/videos/video.mp4"); ?>" type="video/mp4">
                 </video>
             </div>
 
@@ -37,7 +36,7 @@
 
         <div class="section">
 
-            <h1>Random Travel Quote</h1>
+            <h1>Buddy Who Never Ditch Plans</h1>
 
 
             <form action="<?php  echo site_url('trip-search'); ?>" class="d-block" method="get" style="position: absolute;
@@ -52,7 +51,7 @@
 
             <div class="video-container">
                 <div class="color-overlay"></div>
-                <video poster="<?php echo site_url("assets/images/touch_poster.jpg"); ?>" autoplay loop muted style="    bottom: 2em;
+                <video  autoplay loop muted style="    bottom: 2em;
                 position: absolute;
                 z-index: -7;
                 left: 0;
