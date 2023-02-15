@@ -74,7 +74,7 @@ class CacheController extends BaseController
 
         $cache->save('locations',$locations,3600*24*365);
 
-        return redirect()->to(site_url("/"));
+        return redirect()->to(PUBLIC_URL);
 
 
     }

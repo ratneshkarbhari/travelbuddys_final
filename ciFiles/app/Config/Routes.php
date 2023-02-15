@@ -88,12 +88,12 @@ $routes->post("/locations/delete","Locations::delete");
 
 
 
-$routes->get("/testimonials/manage","Testimonials::manage");
-$routes->get("/testimonials/add","Testimonials::add");
-$routes->get("/testimonials/edit","Testimonials::edit");
+$routes->get("/manage/testimonials","Testimonials::manage");
+$routes->get("/create/testimonials","Testimonials::add");
+// $routes->get("/testimonials/edit","Testimonials::edit");
 
-$routes->post("/testimonials/create","Testimonials::create");
-$routes->post("/testimonials/update","Testimonials::update");
+$routes->post("/create/testimonials","Testimonials::create");
+// $routes->post("/testimonials/update","Testimonials::update");
 $routes->post("/testimonials/delete","Testimonials::delete");
 
 

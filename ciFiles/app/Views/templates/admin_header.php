@@ -135,7 +135,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="<?php echo site_url('testimonials/manage'); ?>">
+            <a class="nav-link" href="<?php echo site_url('manage/testimonials'); ?>">
               <span class="align-text-bottom"></span>
               Testimonials
             </a>
