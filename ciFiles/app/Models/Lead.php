@@ -2,7 +2,7 @@
 
 use CodeIgniter\Model;
 
-class LeadModel extends Model
+class Lead extends Model
 {
 
     protected $table = "leads";

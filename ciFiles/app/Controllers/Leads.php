@@ -4,11 +4,12 @@ namespace App\Controllers;
 
 require "./vendor/autoload.php";
 
+use App\Models\Lead;
+use App\Models\LeadModel;
+
+
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
-
-
-use App\Models\LeadModel;
 
 class Leads extends BaseController
 {
@@ -106,6 +107,40 @@ class Leads extends BaseController
             
             
         }       
+
+    }
+
+    public function manage()
+    {
+        $leadModel = new Lead();
+
+        $data = [
+            "title" => "Manage Leads",
+            "leads" => $leadModel->orderBy('id', 'desc')->findAll()
+        
+        ];
+
+        echo view("templates/admin_header",$data);
+        echo view("admin_pages/leads",$data);
+        echo view("templates/admin_footer",$data);
+    
+
+    }
+
+    public function delete()
+    {
+        
+        $leadModel = new Lead();
+
+        $leadId =  $this->request->getPost("lead_id");
+
+        
+
+        if ($leadModel->delete($leadId)) {
+            return redirect()->to(site_url('manage/leads?success_message=Lead deleted'));
+        }else{
+            return redirect()->to(site_url('manage/leads?error_message=Lead not deleted'));
+        }
 
     }
 

@@ -97,12 +97,8 @@ $routes->post("/testimonials/update","Testimonials::update");
 $routes->post("/testimonials/delete","Testimonials::delete");
 
 
-$routes->get("/leads/manage","Leads::manage");
-$routes->get("/leads/add","Leads::add");
-$routes->get("/leads/edit","Leads::edit");
-
+$routes->get("/manage/leads","Leads::manage");
 $routes->post("/leads/create","Leads::create");
-$routes->post("/leads/update","Leads::update");
 $routes->post("/leads/delete","Leads::delete");
 
 
