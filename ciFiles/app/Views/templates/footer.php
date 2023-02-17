@@ -144,14 +144,14 @@ bottom: 8em;">
 
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6FD7GSZZM"></script>
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-S6FD7GSZZM"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
 
     gtag('config', 'G-S6FD7GSZZM');
-    </script>
+    </script> -->
 
 </body>
 
