@@ -52,7 +52,8 @@ class PageLoader extends BaseController
             "trips" => $tripsForCategory,
             "featured_trips" => $cache->get("featured_trips"),
             "trip_categories" => $cache->get("trip_categories"),
-            "trip_category_hero" => $heroTripCategory
+            "trip_category_hero" => $heroTripCategory,
+            "tcTripsObj" => $cache->get("tcTripsObj")
         ];
         
         $this->public_page_loader("trip_category",$data);

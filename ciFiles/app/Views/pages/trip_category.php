@@ -45,7 +45,7 @@
             <div class="row">
 
 
-                <?php foreach($trips as $trip): ?>
+                <?php foreach($tcTripsObj[$trip_category_hero["id"]] as $trip): ?>
                     
 
                 <div class="col-lg-3 col-md-6 col-sm-12 text-center" style="margin-bottom: 7em; height: 100%;">
