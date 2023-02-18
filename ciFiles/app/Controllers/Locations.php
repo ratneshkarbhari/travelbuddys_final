@@ -132,7 +132,7 @@ class Locations extends BaseController
 
         if ($slugUsed&&($slugCreated!=$prevLocationData["slug"])) {
 
-            return redirect()->to(site_url("edit/locations/".$prevLocationData["slug"]."?error_message=Slug already exists"));
+            return redirect()->to(site_url("edit/location/".$prevLocationData["slug"]."?error_message=Slug already exists"));
         
         } else {
 
@@ -192,11 +192,11 @@ class Locations extends BaseController
 
             if($updated){
 
-                return redirect()->to(site_url("edit/locations/".$slugCreated."?success_message=Location created"));
+                return redirect()->to(site_url("edit/location/".$slugCreated."?success_message=Location created"));
 
             }else{
 
-                return redirect()->to(site_url("edit/locations/".$prevLocationData["slug"]."?error_message=Location not created"));
+                return redirect()->to(site_url("edit/location/".$prevLocationData["slug"]."?error_message=Location not created"));
 
             }
             
