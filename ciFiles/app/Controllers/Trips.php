@@ -97,6 +97,10 @@ class Trips extends BaseController
             if (! $featuredImage->hasMoved()&&$featuredImage->isValid()) {
                 $featuredImageRandomName = $featuredImage->getRandomName();
 
+                \Config\Services::image()
+                ->withFile($featuredImage)
+                ->resize(300, 300, true, 'height');
+
                 $featuredImage->move('assets/images/trips', $featuredImageRandomName);
 
             }else {
@@ -254,6 +258,11 @@ class Trips extends BaseController
 
             if (! $featuredImage->hasMoved()&&$featuredImage->isValid()) {
                 $featuredImageRandomName = $featuredImage->getRandomName();
+
+                \Config\Services::image()
+                ->withFile($featuredImage)
+                ->resize(257, 205, true, 'height');
+
 
                 $featuredImage->move('assets/images/trips', $featuredImageRandomName);
 
