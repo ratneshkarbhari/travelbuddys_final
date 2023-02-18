@@ -48,7 +48,12 @@ class Locations extends BaseController
             if (! $featuredImage->hasMoved()&&$featuredImage->isValid()) {
                 $featuredImageRandomName = $featuredImage->getRandomName();
 
-                $featuredImage->move('assets/images/locations', $featuredImageRandomName);
+                \Config\Services::image()
+                ->withFile($featuredImage)
+                ->resize(257, 205, true, 'height')
+                ->save('./assets/images/locations/'. $featuredImageRandomName);
+
+                // $featuredImage->move('assets/images/locations', $featuredImageRandomName);
 
             }else {
                 $featuredImageRandomName="noimage.jpg";
@@ -72,7 +77,10 @@ class Locations extends BaseController
             if (! $thumbnailImage->hasMoved()&&$thumbnailImage->isValid()) {
                 $thumbnailImageRandomName = $thumbnailImage->getRandomName();
 
-                $thumbnailImage->move('assets/images/locations', $thumbnailImageRandomName);
+                \Config\Services::image()
+                ->withFile($thumbnailImage)
+                ->resize(257, 205, true, 'height')
+                ->save('./assets/images/locations/'. $thumbnailImageRandomName);
 
             }else {
                 $thumbnailImageRandomName="noimage.jpg";
@@ -133,7 +141,11 @@ class Locations extends BaseController
             if (! $featuredImage->hasMoved()&&$featuredImage->isValid()) {
                 $featuredImageRandomName = $featuredImage->getRandomName();
 
-                $featuredImage->move('assets/images/locations', $featuredImageRandomName);
+
+                \Config\Services::image()
+                ->withFile($featuredImage)
+                ->resize(257, 205, true, 'height')
+                ->save('./assets/images/locations/'. $featuredImageRandomName);
 
             }else {
                 $featuredImageRandomName=$prevLocationData["featured_image"];
@@ -157,7 +169,11 @@ class Locations extends BaseController
             if (! $thumbnailImage->hasMoved()&&$thumbnailImage->isValid()) {
                 $thumbnailImageRandomName = $thumbnailImage->getRandomName();
 
-                $thumbnailImage->move('assets/images/locations', $thumbnailImageRandomName);
+
+                \Config\Services::image()
+                ->withFile($thumbnailImage)
+                ->resize(257, 205, true, 'height')
+                ->save('./assets/images/trips/'. $thumbnailImageRandomName);
 
             }else {
                 $thumbnailImageRandomName=$prevLocationData["thumbnail"];
