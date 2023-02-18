@@ -35,7 +35,7 @@ class PageLoader extends BaseController
     public function trip_category($slug)
     {
 
-        $tripCategoryModel = new TripCategoryModel();
+        $tripCategoryModel = new TripCategory();
 
         $heroTripCategory = $tripCategoryModel->where("slug",$slug)->first();
 
@@ -63,7 +63,7 @@ class PageLoader extends BaseController
     {
 
 
-        $locationModel = new LocationModel();
+        $locationModel = new Location();
 
         $heroLocation = $locationModel->where("slug",$slug)->first();
 
