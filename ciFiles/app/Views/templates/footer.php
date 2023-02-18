@@ -1,5 +1,4 @@
-<script src="<?php echo site_url('assets/js/jquery-3.6.1.min.js'); ?>" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 
 <script src="<?php echo site_url("assets/js/bootstrap.min.js"); ?>"></script>
