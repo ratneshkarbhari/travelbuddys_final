@@ -79,7 +79,7 @@ $routes->post("/delete/trips","Trips::delete");
 
 $routes->get("/manage/locations","Locations::manage");
 $routes->get("/add/locations","Locations::add");
-$routes->get("/edit/locations/(:any)","Locations::edit/$1");
+$routes->get("/edit/location/(:any)","Locations::edit/$1");
 
 $routes->post("/locations/create","Locations::create");
 $routes->post("/locations/update","Locations::update");
