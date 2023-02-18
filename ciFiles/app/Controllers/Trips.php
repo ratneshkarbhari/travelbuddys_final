@@ -100,9 +100,9 @@ class Trips extends BaseController
                 \Config\Services::image()
                 ->withFile($featuredImage)
                 ->resize(257, 205, true, 'height')
-                ->save('./assets/images/trips/'. $featuredImage->getRandomName());
+                ->save('./assets/images/trips/'. $featuredImageRandomName);
 
-                $featuredImage->move('assets/images/trips', $featuredImageRandomName);
+                // $featuredImage->move('assets/images/trips', $featuredImageRandomName);
 
             }else {
                 $featuredImageRandomName="noimage.jpg";
@@ -263,10 +263,10 @@ class Trips extends BaseController
                 \Config\Services::image()
                 ->withFile($featuredImage)
                 ->resize(257, 205, true, 'height')
-                ->save('./assets/images/trips/'. $featuredImage->getRandomName());
+                ->save('./assets/images/trips/'. $featuredImageRandomName);
 
 
-                $featuredImage->move('assets/images/trips', $featuredImageRandomName);
+                // $featuredImage->move('assets/images/trips', $featuredImageRandomName);
 
             }else {
                 $featuredImageRandomName=$previousTripData["featured_image"];
