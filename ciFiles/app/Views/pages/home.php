@@ -22,7 +22,7 @@
 
             <div class="video-container">
                 <div class="color-overlay"></div>
-                <video autoplay loop muted src="<?php echo site_url("assets/videos/video.mp4"); ?>" type="video/mp4">
+                <video poster="<?php echo site_url("assets/images/desktop_hero_poster.jpg"); ?>" autoplay loop muted src="<?php echo site_url("assets/videos/video.mp4"); ?>" type="video/mp4">
                 </video>
             </div>
 
@@ -51,7 +51,7 @@
 
             <div class="video-container">
                 <div class="color-overlay"></div>
-                <video  autoplay loop muted style="    bottom: 2em;
+                <video poster="<?php echo site_url("assets/images/touch_hero_poster.jpg"); ?>"  autoplay loop muted style="    bottom: 2em;
                 position: absolute;
                 z-index: -7;
                 left: 0;
