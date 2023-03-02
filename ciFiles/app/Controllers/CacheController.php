@@ -35,32 +35,36 @@ class CacheController extends BaseController
 
         foreach ($allTripCategories as $tripCategory) {
 
+            if($tripCategory["trips"]!=""){
 
-            $query = "SELECT GROUP_CONCAT(t.title SEPARATOR ',') as title, GROUP_CONCAT(t.slug SEPARATOR ',') as slug, GROUP_CONCAT(t.featured_image SEPARATOR ',') as featured_image, GROUP_CONCAT(t.duration SEPARATOR ',') as duration, GROUP_CONCAT(loc.title SEPARATOR ',') as location FROM trips t JOIN locations loc on t.location = loc.id WHERE t.id IN ".str_replace(']',')',str_replace('[','(',$tripCategory["trips"]));
-            $tripsForCategory = $db->query($query)->getResult();
-            foreach ($tripsForCategory as $tripForCategory) {
-                if (count(explode(',',$tripForCategory->title))>1) {
-                    $tripTitles = explode(',',$tripForCategory->title);
-                    $tripSlugs = explode(',',$tripForCategory->slug);
-                    $tripFeaturedImages = explode(',',$tripForCategory->featured_image);
-                    $tripDurations = explode(',',$tripForCategory->duration);
-                    $tripLocations = explode(',',$tripForCategory->location);
-                    for ($i=0; $i < count($tripTitles); $i++) { 
-                        $trip = [
-                            "title" => $tripTitles[$i],
-                            "slug" => $tripSlugs[$i],
-                            "featured_image" => $tripFeaturedImages[$i],
-                            "duration" => $tripDurations[$i],
-                            "location" => $tripLocations[$i],
-                        ];
-                        $tcTripsObj[$tripCategory["id"]][] = $trip;
-                    }
-                } else {
-                    $tcTripsObj[$tripCategory["id"]][] = $tripsForCategory;
-                }
+                $query = "SELECT GROUP_CONCAT(t.title SEPARATOR ',') as title, GROUP_CONCAT(t.slug SEPARATOR ',') as slug, GROUP_CONCAT(t.featured_image SEPARATOR ',') as featured_image, GROUP_CONCAT(t.duration SEPARATOR ',') as duration, GROUP_CONCAT(loc.title SEPARATOR ',') as location FROM trips t JOIN locations loc on t.location = loc.id WHERE t.id IN (".str_replace(array("[","]"),array("",""),$tripCategory["trips"]).")";
                 
+                $tripsForCategory = $db->query($query)->getResult();
+                foreach ($tripsForCategory as $tripForCategory) {
+                    if (count(explode(',',$tripForCategory->title))>1) {
+                        $tripTitles = explode(',',$tripForCategory->title);
+                        $tripSlugs = explode(',',$tripForCategory->slug);
+                        $tripFeaturedImages = explode(',',$tripForCategory->featured_image);
+                        $tripDurations = explode(',',$tripForCategory->duration);
+                        $tripLocations = explode(',',$tripForCategory->location);
+                        for ($i=0; $i < count($tripTitles); $i++) { 
+                            $trip = [
+                                "title" => $tripTitles[$i],
+                                "slug" => $tripSlugs[$i],
+                                "featured_image" => $tripFeaturedImages[$i],
+                                "duration" => $tripDurations[$i],
+                                "location" => $tripLocations[$i],
+                            ];
+                            $tcTripsObj[$tripCategory["id"]][] = $trip;
+                        }
+                    } else {
+                        $tcTripsObj[$tripCategory["id"]][] = $tripsForCategory;
+                    }
+                    
+                }
+                // $tcTripsObj[$tripCategory["id"]] = $tripsForCategory;
+            
             }
-            // $tcTripsObj[$tripCategory["id"]] = $tripsForCategory;
         }
 
         $cache->save('tcTripsObj',$tcTripsObj,3600*24*365);

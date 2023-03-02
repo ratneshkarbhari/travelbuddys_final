@@ -164,7 +164,7 @@
 
                 <div class="col-4 col-lg-3 col-md-6 col-sm-12 text-center">
                     <a href="<?php  echo site_url('trip-categories/'.$trip_category["slug"]) ?>">
-                        <img class="w-50 lazy" src="<?php  echo site_url('assets/images/placeholder.png') ?>" data-src="<?php  echo site_url('assets/images/trip_categories/'.$trip_category["featured_image"]) ?>">
+                        <img class="w-50 lazy" src="<?php  echo site_url('assets/images/trip_categories/'.$trip_category["featured_image"]) ?>">
                         
                         <h2 class="trip-title d-none d-lg-block"><?php echo $trip_category["title"] ; ?></h2>
                     </a>
@@ -347,7 +347,8 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper container">
 
-                        <?php  foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
+`                       
+                        <?php if(isset($tcTripsObj[$trip_category["id"]])):  foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
 
                             <?php if(count($trip)>1): ?>
 
@@ -364,7 +365,7 @@
 
 
                             <?php endif; ?>
-                        <?php  endforeach; ?>
+                        <?php  endforeach; endif; ?>
 
 
 
@@ -384,7 +385,7 @@
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper container">
 
-                        <?php  foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
+                        <?php if(isset($tcTripsObj[$trip_category["id"]])): foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
 
                             <?php if(count($trip)>1): ?>
 
@@ -401,7 +402,7 @@
 
 
                             <?php endif; ?>
-                        <?php  endforeach; ?>
+                        <?php  endforeach; endif; ?>
 
 
 

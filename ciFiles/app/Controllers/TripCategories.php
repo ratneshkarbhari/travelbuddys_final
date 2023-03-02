@@ -67,10 +67,7 @@ class TripCategories extends BaseController
             if (! $featuredImage->hasMoved()&&$featuredImage->isValid()) {
                 $featuredImageRandomName = $featuredImage->getRandomName();
 
-                \Config\Services::image()
-                ->withFile($featuredImage)
-                ->resize(257, 205, true, 'height')
-                ->save('./assets/images/trip_categories/'. $featuredImageRandomName);
+                $featuredImage->move('assets/images/trip_categories', $featuredImageRandomName);
 
             }else {
                 $featuredImageRandomName="noimage.jpg";
@@ -167,10 +164,8 @@ class TripCategories extends BaseController
             if (! $featuredImage->hasMoved()&&$featuredImage->isValid()) {
                 $featuredImageRandomName = $featuredImage->getRandomName();
 
-                \Config\Services::image()
-                ->withFile($featuredImage)
-                ->resize(257, 205, true, 'height')
-                ->save('./assets/images/trip_categories/'. $featuredImageRandomName);
+                $featuredImage->move('assets/images/trip_categories', $featuredImageRandomName);
+
 
             }else {
                 $featuredImageRandomName=$currentTcData["featured_image"];

@@ -65,7 +65,7 @@
                 <br>
                 <?php foreach($trip_categories as $trip_category): ?>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" name="trip_categories[]" type="checkbox" id="" value="<?php echo $trip_category["id"]; ?>" <?php if(in_array($trip["id"],json_decode($trip_category["trips"],TRUE))){echo "checked";} ?>>
+                    <input class="form-check-input" name="trip_categories[]" type="checkbox" id="" value="<?php echo $trip_category["id"]; ?>" <?php if(is_array(json_decode($trip_category["trips"],TRUE))){ if(in_array($trip["id"],json_decode($trip_category["trips"],TRUE))){echo "checked";}} ?>>
                     <label class="form-check-label" for=""><?php echo $trip_category["title"]; ?></label>
                 </div>
                 <?php endforeach; ?>
