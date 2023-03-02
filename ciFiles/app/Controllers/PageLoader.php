@@ -129,6 +129,8 @@ class PageLoader extends BaseController
         $tripModel = new Trip();   
         $heroTrip = $tripModel->where("slug",$slug)->first();
 
+        
+
         $data = [
             "title" => $heroTrip["title"],
             "featured_trips" => $cache->get("featured_trips"),
@@ -136,6 +138,8 @@ class PageLoader extends BaseController
             "trip_categories" => $cache->get("trip_categories"),
             "testimonials" => $cache->get("testimonials")
         ];
+
+
         $this->public_page_loader("trip",$data);
     }
 

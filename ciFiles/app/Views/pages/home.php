@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lity/2.4.1/lity.min.css" integrity="sha512-UiVP2uTd2EwFRqPM4IzVXuSFAzw+Vo84jxICHVbOA1VZFUyr4a6giD9O3uvGPFIuB2p3iTnfDVLnkdY7D/SJJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <main id="home" class="page-content" >
 
 
@@ -86,6 +87,11 @@
                                     <?php echo $featured_trip->location ; ?></span>
                                 <span class="duration"><img src="<?php  echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
                                     <?php echo $featured_trip->duration ; ?></span>
+                                    <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
+                                        Starts at ₹ <?php if($featured_trip->sale_price!=0.00){echo $featured_trip->sale_price;}else{
+                                            echo $featured_trip->price;
+                                        }    ?>
+                                    </p>
                             </div>
                             <h2 class="trip-title"><?php echo $featured_trip->title ; ?></h2>
                         </a>

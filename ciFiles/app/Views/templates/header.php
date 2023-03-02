@@ -87,7 +87,7 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <?php foreach ($trip_categories as $trip_category): ?>
-                                <li><a class="dropdown-item" href="<?php echo site_url('trip-categories/'.$trip_category["slug"]); ?>"><?php echo $trip_category["title"]; ?></a></li>                                    
+                                <li><a class="dropdown-item trip-category-dropdown" href="<?php echo site_url('trip-categories/'.$trip_category["slug"]); ?>"><?php echo $trip_category["title"]; ?></a></li>                                    
                                 <?php endforeach; ?>
                             </ul>
                         </li>
@@ -137,7 +137,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             <?php foreach ($trip_categories as $trip_category): ?>
-                                <li><a class="dropdown-item" href="<?php echo site_url('trip-categories/'.$trip_category["slug"]); ?>"><?php echo $trip_category["title"]; ?></a></li>                                    
+                                <li><a class="dropdown-item trip-category-dropdown" href="<?php echo site_url('trip-categories/'.$trip_category["slug"]); ?>"><?php echo $trip_category["title"]; ?></a></li>                                    
                                 <?php endforeach; ?>
                             </ul>
                         </li>
@@ -165,7 +165,7 @@
                             </a>
                             <ul class="dropdown-menu">
                             <?php foreach ($trip_categories as $trip_category): ?>
-                                <li><a class="dropdown-item" href="<?php echo site_url('trip-categories/'.$trip_category["slug"]); ?>"><?php echo $trip_category["title"]; ?></a></li>                                    
+                                <li><a class="dropdown-item trip-category-dropdown" href="<?php echo site_url('trip-categories/'.$trip_category["slug"]); ?>"><?php echo $trip_category["title"]; ?></a></li>                                    
                                 <?php endforeach; ?>
                             </ul>
                         </li>

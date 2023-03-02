@@ -11,7 +11,7 @@ Options All -Indexes
 	Options +FollowSymlinks
 	RewriteEngine On
 
-	SetEnv CI_ENVIRONMENT production
+	SetEnv CI_ENVIRONMENT development
 
 
 	# If you installed CodeIgniter in a subfolder, you will need to

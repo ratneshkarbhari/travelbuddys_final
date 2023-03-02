@@ -12,7 +12,7 @@ class CacheController extends BaseController
        
         $db = \Config\Database::connect();
 
-        $featured_trips = $db->query("SELECT t.title,t.slug,t.featured_image,t.duration,loc.title as location, t.sale_price FROM trips t JOIN locations loc on t.location = loc.id WHERE t.featured='Yes'")->getResult();
+        $featured_trips = $db->query("SELECT t.title,t.slug,t.featured_image,t.duration,loc.title as location, t.price, t.sale_price FROM trips t JOIN locations loc on t.location = loc.id WHERE t.featured='Yes'")->getResult();
 
 
         $cache = \Config\Services::cache();
@@ -37,7 +37,7 @@ class CacheController extends BaseController
 
             if($tripCategory["trips"]!=""){
 
-                $query = "SELECT GROUP_CONCAT(t.title SEPARATOR ',') as title, GROUP_CONCAT(t.slug SEPARATOR ',') as slug, GROUP_CONCAT(t.featured_image SEPARATOR ',') as featured_image, GROUP_CONCAT(t.duration SEPARATOR ',') as duration, GROUP_CONCAT(loc.title SEPARATOR ',') as location FROM trips t JOIN locations loc on t.location = loc.id WHERE t.id IN (".str_replace(array("[","]"),array("",""),$tripCategory["trips"]).")";
+                echo $query = "SELECT GROUP_CONCAT(t.title SEPARATOR ',') as title, GROUP_CONCAT(t.slug SEPARATOR ',') as slug, GROUP_CONCAT(t.featured_image SEPARATOR ',') as featured_image, GROUP_CONCAT(t.duration SEPARATOR ',') as duration, GROUP_CONCAT(loc.title SEPARATOR ',') as location, GROUP_CONCAT(t.price SEPARATOR ',') as price, GROUP_CONCAT(t.sale_price SEPARATOR ',') as sale_price  FROM trips t JOIN locations loc on t.location = loc.id WHERE t.id IN (".str_replace(array("[","]"),array("",""),$tripCategory["trips"]).")";
                 
                 $tripsForCategory = $db->query($query)->getResult();
                 foreach ($tripsForCategory as $tripForCategory) {
@@ -47,6 +47,8 @@ class CacheController extends BaseController
                         $tripFeaturedImages = explode(',',$tripForCategory->featured_image);
                         $tripDurations = explode(',',$tripForCategory->duration);
                         $tripLocations = explode(',',$tripForCategory->location);
+                        $tripPrices = explode(',',$tripForCategory->price);
+                        $tripSalePrices = explode(',',$tripForCategory->sale_price);
                         for ($i=0; $i < count($tripTitles); $i++) { 
                             $trip = [
                                 "title" => $tripTitles[$i],
@@ -54,6 +56,8 @@ class CacheController extends BaseController
                                 "featured_image" => $tripFeaturedImages[$i],
                                 "duration" => $tripDurations[$i],
                                 "location" => $tripLocations[$i],
+                                "price" => $tripPrices[$i],
+                                "sale_price" => $tripSalePrices[$i]
                             ];
                             $tcTripsObj[$tripCategory["id"]][] = $trip;
                         }

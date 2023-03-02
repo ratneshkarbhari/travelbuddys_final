@@ -27,9 +27,9 @@ class Database extends Config
     public array $default = [
         'DSN'      => '',
         'hostname' => 'localhost',
-        'username' => 'traveiv8_admin',
-        'password' => 'Phoenix@47',
-        'database' => 'traveiv8_main',
+        'username' => 'ratnesh',
+        'password' => 'ratnesh47',
+        'database' => 'travelbuddys',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
