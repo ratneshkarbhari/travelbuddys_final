@@ -172,7 +172,7 @@
                     <a href="<?php  echo site_url('trip-categories/'.$trip_category["slug"]) ?>">
                         <img class="w-50 lazy" src="<?php  echo site_url('assets/images/trip_categories/'.$trip_category["featured_image"]) ?>">
                         
-                        <h2 class="trip-title d-none d-lg-block"><?php echo $trip_category["title"] ; ?></h2>
+                        <h5 class="trip-title"><?php echo $trip_category["title"] ; ?></h5>
                     </a>
                 </div>
     
