@@ -77,7 +77,7 @@ class Leads extends BaseController
 
     public function create_lead(){
 
-        $leadModel = new LeadModel();
+        $leadModel = new Lead();
 
         $name = $this->request->getPost("name");
         $phone = $this->request->getPost("phone");

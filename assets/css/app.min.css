@@ -22,6 +22,7 @@ span.location,
 span.duration {
     font-size: 12px;
     font-weight: 900;
+    color: #495E97;
 }
 span.location img,
 span.duration img {
@@ -289,6 +290,9 @@ header nav {
     align-items: center;
     justify-content: center;
 }
+.trip-page-hero-section h1{
+    font-size: 4em;;
+}
 .trip-category-page-hero-section {
     align-items: center;
     justify-content: center;
@@ -327,7 +331,7 @@ header nav {
 header#scroll {
     top: 0;
     left: 0;
-    background-color: #fff;
+    background-color: #495E97;
     z-index: 2;
 }
 header#universal {
@@ -359,7 +363,7 @@ p {
     color: #000 !important;
 }
 p.detail-heading {
-    font-size: 16px !important;
+    font-size: 20px !important;
 }
 p.detail-info {
     font-size: 18px !important;
@@ -371,7 +375,7 @@ p.detail-info {
 .trip-meta {
     padding: 2%;
 }
-.swiper-slide:hover {
+.swiper-slide:hover,.trip-card:hover {
     box-shadow: 0px 0px 10px black;
     -webkit-transform: translateY(-6px);
     transform: translateY(-6px);
@@ -391,6 +395,20 @@ p.detail-info {
     transform: scale(1.1);
     transition-delay: 200ms;
 }
+.header_scroll li a,.header_scroll li a:hover{
+    color: white;
+}
+a.dropdown-item.trip-category-dropdown{
+    color: #000;
+}
+.btn-custom,ul.dropdown-menu.show{
+    background-color: #fff;
+    color: #000;
+}
+section#discounted-trips{
+    background-color: #fafafa;
+}
+
 @media (min-width: 1281px) {
     .navbar-brand {
         width: 20%;

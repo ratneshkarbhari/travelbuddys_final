@@ -1,4 +1,4 @@
-<main class="page-content" id="about" style="margin-top: 10em;">
+<main class="page-content" id="about" style="margin-top: 5em;">
     <div class="container">
     <p>Buddy who never ditches plans.</p>
 <p><br></p>

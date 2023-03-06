@@ -51,7 +51,7 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-itemx">
-                            <a class="nav-link active" aria-current="page" href="<?php echo site_url(''); ?>">Home</a>
+                            <a class="nav-link" aria-current="page" href="<?php echo site_url(''); ?>">Home</a>
                         </li>
                         <li class="nav-itemx dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -113,7 +113,7 @@
     <header id="scroll">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/tblogo.png'); ?>"></a>
+                <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/tblogo_temp.png'); ?>"></a>
                 <a href="#" id="sideNavToggle" class="d-sm-block d-md-block d-lg-none" style="margin-right: 1em;">
                     <img src="<?php echo site_url('assets/icons/menu.svg'); ?>" style="width: 30px; height: 30px;">
                 </a>
@@ -126,9 +126,9 @@
                 <div id="sidenavCloser" class="d-none"></div>
                 <div class="d-none" id="sideNav">
 
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav scroll-nav-list">
                         <li class="nav-itemx">
-                            <a class="nav-link active" aria-current="page" href="<?php echo site_url(''); ?>">Home</a>
+                            <a class="nav-link" aria-current="page" href="<?php echo site_url(''); ?>">Home</a>
                         </li>
                         <li class="nav-itemx dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -154,9 +154,9 @@
                 </div>
                 
                 <div class="collapse navbar-collapse" id="desktopNav">
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto header_scroll">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="<?php echo site_url(''); ?>">Home</a>
+                            <a class="nav-link" aria-current="page" href="<?php echo site_url(''); ?>">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"

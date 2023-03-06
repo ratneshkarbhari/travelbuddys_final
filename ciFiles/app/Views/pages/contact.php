@@ -1,6 +1,11 @@
-<main class="page-container" id="about" style="margin-top: 4em;">
+<main class="page-container" id="about" style="margin-top: 1em;">
    
+    <div id="mapBox" class="d-none d-lg-block" style="margin-top: 1em;">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15085.637229883923!2d72.8947681!3d19.0457334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2d438246f470d49d!2sTravel%20Buddy&#39;s%20Tours%20And%20Events!5e0!3m2!1sen!2sin!4v1673950778780!5m2!1sen!2sin" width="100%    " height="338" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div id="mapBoxTouch" class="d-sm-block d-md-block d-lg-none" style="margin-top: 3em;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15085.637229883923!2d72.8947681!3d19.0457334!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2d438246f470d49d!2sTravel%20Buddy&#39;s%20Tours%20And%20Events!5e0!3m2!1sen!2sin!4v1673950778780!5m2!1sen!2sin" width="100%    " height="338" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
     <section id="contact-info" class="bg-light text-left" style="padding: 2em 0;">
         <div class="container">
             <div class="row">
@@ -34,7 +39,7 @@
                             <textarea required="" name="message" id="message" class="form-control"></textarea>
                         </div>
                         <br>
-                        <button type="submit" class="btn" style="background-color: #d10762; color: white;">Send Message</button>
+                        <button type="submit" class="btn" style="background-color: #0a0a0a; color: white;">Send Message</button>
                     </form>
                     
 

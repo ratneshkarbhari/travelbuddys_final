@@ -77,7 +77,6 @@ class CacheController extends BaseController
             }
         }
 
-        
 
         $cache->save('tcTripsObj',$tcTripsObj,3600*24*365);
 

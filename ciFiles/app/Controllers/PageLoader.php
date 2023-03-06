@@ -40,23 +40,20 @@ class PageLoader extends BaseController
 
         $heroTripCategory = $tripCategoryModel->where("slug",$slug)->first();
 
-
-        $tcTripsQuery = "SELECT GROUP_CONCAT(t.title SEPARATOR ',') as title, GROUP_CONCAT(t.slug SEPARATOR ',') as slug, GROUP_CONCAT(t.featured_image SEPARATOR ',') as featured_image, GROUP_CONCAT(t.duration SEPARATOR ',') as duration, GROUP_CONCAT(loc.title SEPARATOR ',') as location FROM trips t JOIN locations loc on t.location = loc.id WHERE t.id IN ".str_replace(']',')',str_replace('[','(',$heroTripCategory["trips"]));
-
-        $db = \Config\Database::connect();
-
-        $tripsForCategory = $db->query($tcTripsQuery)->getResultArray();
-
         $cache = \Config\Services::cache();
+
+        if(!isset($cache->get("tcTripsObj")[$heroTripCategory["id"]])){
+            return redirect()->to(site_url());
+        }
+
 
 
         $data = [
             "title" => $heroTripCategory["title"],
-            "trips" => $tripsForCategory,
+            "tcTripsObj" => $cache->get("tcTripsObj")[$heroTripCategory["id"]],
             "featured_trips" => $cache->get("featured_trips"),
             "trip_categories" => $cache->get("trip_categories"),
             "trip_category_hero" => $heroTripCategory,
-            "tcTripsObj" => $tripsForCategory
         ];
         
         $this->public_page_loader("trip_category",$data);

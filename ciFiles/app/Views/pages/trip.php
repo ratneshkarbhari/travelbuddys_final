@@ -371,7 +371,7 @@
                                         <input type="hidden" name="date" value="No date selected">
                                         <button class="btn btn-primary d-block w-100" type="submit" style="margin-top: 1em;">Get Quote</button></form>
                                         <a
-                                    href="https://wa.me/919967491105 ?text=Hey!%20CaptureTrip%20I%20am%20interested%20in%20your%20trips"
+                                    href="https://wa.me/919967491105?text=Hey I am interested in your trips"
                                     target="_blank" class="btn btn-success d-block"><span class="wtsicon"></span>
                                     Whatsapp</a><a  href="tel:9967491105 " target="_blank"
                                     class="btn btn-info d-block"><span class="callnowicon"></span> Call Now</a>
@@ -589,7 +589,7 @@
                    
                 <button class="btn btn-primary d-block w-100" type="submit" style="margin-top: 1em;">Get Quote</button>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer d-none">
                 <button type="submt" class="btn btn-primary">BOOK NOW</button>
                 </form>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
