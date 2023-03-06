@@ -19,6 +19,7 @@ class PageLoader extends BaseController
     {
 
         $cache = \Config\Services::cache();
+        
         $data = [
             "title" => "Buddy Who Never Ditch Plans ",
             "tcTripsObj" => $cache->get("tcTripsObj"),

@@ -348,7 +348,7 @@
 
     </section>
 
-    <?php foreach($trip_categories as $trip_category): ?>
+    <?php foreach($trip_categories as $trip_category): if(isset($tcTripsObj[$trip_category["id"]])): ?>
         <section id="<?php echo $trip_category["slug"] ?>" class="regular-section">
 
             <div class="container">
@@ -360,7 +360,7 @@
                     <div class="swiper-wrapper container">
 
 `                       
-                        <?php if(isset($tcTripsObj[$trip_category["id"]])):  foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
+                        <?php  foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
 
                             <?php if((count($trip)>1)): ?>
 
@@ -377,7 +377,7 @@
 
 
                             <?php endif; ?>
-                        <?php  endforeach; endif; ?>
+                        <?php   endforeach; ?>
 
 
 
@@ -439,7 +439,7 @@
             </div>
 
         </section>
-    <?php  endforeach; ?>
+    <?php endif;  endforeach; ?>
 
     <section id="testimonials" class="regular-section">
 
