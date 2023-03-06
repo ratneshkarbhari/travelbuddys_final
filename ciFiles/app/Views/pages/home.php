@@ -238,7 +238,7 @@
 
                         <div class="swiper-slide text-center trip-card">
                             <a href="<?php echo site_url('locations/' . $location->slug) ?>">
-                                <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/locations/' . $location->thumbnail) ?>">
+                                <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/locations/' . $location->featured_image) ?>">
                                 <h5 class="trip-title"><?php echo $location->title; ?></h5>
                             </a>
                         </div>
