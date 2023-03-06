@@ -5,7 +5,7 @@
 
     <!-- HOME HERO -->
     <section class="text-left d-none d-lg-block text-dark hero-section trip-page-hero"
-        style="background-image: url('<?php echo site_url("assets/images/trips/".$focus_trip["banner_image"]); ?>'); background-size: 'cover';" id="trip-hero">
+        style="background-image: url('<?php echo site_url("assets/images/trips/".$focus_trip["banner_image"]); ?>'); background-size: cover;" id="trip-hero">
 
 
 
@@ -18,7 +18,7 @@
 
         <div class="container-fluid" style="margin-bottom: 2em;">
             <div class="row">
-                <div class="col-lg-12 d-flex justify-content-md-end mt-3 btn-mobile-resp" id="ctaBox"><a target="_blank" download=""
+                <div class="col-lg-12 d-flex justify-content-center mt-3 btn-mobile-resp" id="ctaBox"><a target="_blank" download=""
                         href="<?php echo site_url('assets/brochures/'.$focus_trip["brochure"]); ?>"
                         class="banr-btn btn" style="margin-right: 1em;">GET ITINERARY</a>
                         <a data-bs-toggle="modal" data-bs-target="#bookingModal" class="banr-btn btn"
@@ -30,23 +30,33 @@
 
 
     </section>
-    <section class="text-left d-sm-block d-md-block d-lg-none text-light trip-page-hero-touch
-        style="background-image: site_url('<?php echo site_url("assets/images/trips/".$focus_trip["banner_image"]); ?>'); background-size: 'cover'; background-size: cover; background-repeat: no-repeat;" id="trip-hero">
-
-        <div class="text-center" style="padding: 5em 0;">
+    <section class="text-left d-sm-block d-md-block d-lg-none text-dark hero-section trip-page-hero"
+        style="background-image: url('<?php echo site_url("assets/images/trips/".$focus_trip["banner_image"]); ?>'); background-size: cover; background-position: center;" id="trip-hero-touch">
 
 
-            <h1 class="text-center text-light">TRIP NAME</h1>
+
+        <div class="trip-page-hero-section" >
+            <h1 class="text-light"><?php echo $focus_trip["title"] ?></h1>
 
 
-            <a target="_blank" download  href="<?php echo site_url('assets/brochures/'.$focus_trip["brochure"]); ?>" class="banr-btn btn" style="margin-right: 1em;">GET ITINERARY</a><a data-bs-toggle="modal" data-bs-target="#bookingModal" class="banr-btn btn" href="#">BOOK NOW</a>
 
+        </div>
+        <br><br>
+        <div class="container-fluid" style="margin-bottom: 2em;">
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center mt-3 btn-mobile-resp" id="ctaBox"><a target="_blank" download=""
+                        href="<?php echo site_url('assets/brochures/'.$focus_trip["brochure"]); ?>"
+                        class="banr-btn btn" style="margin-right: 1em;">GET ITINERARY</a>
+                        <a data-bs-toggle="modal" data-bs-target="#bookingModal" class="banr-btn btn"
+                        href="#">BOOK NOW</a></div>
+            </div>
         </div>
 
 
 
 
     </section>
+   
     <section id="trip-details" class="regular-section">
         <div class="container">
 

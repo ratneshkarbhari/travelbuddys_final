@@ -3,7 +3,24 @@
 
 
     <!-- HOME HERO -->
-    <section class="text-left d-none d-lg-block text-dark hero-section trip-category-page-hero" style="background-image: url('<?php echo site_url('assets/images/trip_categories/'.$trip_category_hero["banner_image"]); ?>'); background-size: 'cover'; background-position: center;" id="trip-hero">
+    <section class="text-left d-none d-lg-block text-dark hero-section trip-category-page-hero" style="background-image: url('<?php echo site_url('assets/images/trip_categories/'.$trip_category_hero["banner_image"]); ?>'); background-position: top;" id="trip-hero">
+
+
+
+        <div class="trip-category-page-hero-section">
+            <h1 class="text-light"><?php echo $trip_category_hero["title"]; ?></h1>
+
+
+
+        </div>
+
+
+
+
+
+    </section>
+
+    <section class="text-center d-lg-none text-dark hero-section text-left text-dark hero-section trip-category-page-hero" style="background-image: url('<?php echo site_url('assets/images/trip_categories/'.$trip_category_hero["banner_image"]); ?>'); background-position: top;" id="trip-hero">
 
 
 
@@ -20,23 +37,6 @@
 
     </section>
   
-    <section class="text-center d-lg-none text-dark hero-section text-left text-dark hero-section trip-category-page-hero" style="background-image: site_url( '<?php echo site_url('assets/images/trip_categories/'.$trip_category_hero["banner_image"]); ?>'); background-size: 'cover';"  id="contact-hero-touch">
-
-
-
-        <div class="trip-category-page-hero-section" style="justify-content:left;">
-            <h1 class="text-light"><?php echo $trip_category_hero["title"]; ?></h1>
-
-
-
-        </div>
-
-
-
-
-
-
-    </section>
 
     <section id="contact-form" class="regular-section">
 
@@ -44,9 +44,11 @@
 
             <div class="row">
 
+                
 
-                <?php foreach($tcTripsObj[$trip_category_hero["id"]] as $trip): ?>
-                    
+
+                <?php  foreach($tcTripsObj as $trip): if($trip["slug"]!=""): ?>
+                
 
                 <div class="col-lg-3 col-md-6 col-sm-12 text-center" style="margin-bottom: 7em; height: 100%;">
                     <a href="<?php echo site_url('trips/'.$trip["slug"]); ?>">
@@ -62,7 +64,7 @@
                 </div>
 
 
-                <?php endforeach; ?>
+                <?php else: echo "<h4>No Trips added</h4>"; endif; endforeach; ?>
 
                 
             </div>

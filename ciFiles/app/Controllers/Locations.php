@@ -167,7 +167,7 @@ class Locations extends BaseController
             $thumbnailImage = $this->request->getFile('thumbnail_image');
 
             if (! $thumbnailImage->hasMoved()&&$thumbnailImage->isValid()) {
-                $thumbnailImageRandomName = $thumbnailImage->getRandomName();
+                echo $thumbnailImageRandomName = $thumbnailImage->getRandomName();
 
 
                 \Config\Services::image()
@@ -189,6 +189,7 @@ class Locations extends BaseController
                 "thumbnail" => $thumbnailImageRandomName,
                 "description" => $this->request->getPost("description")
             ]);
+
 
             if($updated){
 

@@ -125,9 +125,15 @@
                             <img class="trip-card-image lazy" src="<?php  echo site_url('assets/images/placeholder.png') ?>" data-src="<?php  echo site_url('assets/images/trips/'.$featured_trip->featured_image) ?>">
                             <div class="trip-meta">
                                 <span class="location"><img src="<?php  echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
-                                    <?php echo $featured_trip->location ; ?></span>
+                                    <?php echo $featured_trip->location ; ?></span><br>
                                 <span class="duration"><img src="<?php  echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
                                     <?php echo $featured_trip->duration ; ?></span>
+                                    <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
+                                        Starts at ₹ <?php if($featured_trip->sale_price!=0.00){echo $featured_trip->sale_price;}else{
+                                            echo $featured_trip->price;
+                                        }    ?>
+                                    </p>
+
                             </div>
                             <h2 class="trip-title"><?php echo $featured_trip->title ; ?></h2>
                         </a>
@@ -356,14 +362,14 @@
 `                       
                         <?php if(isset($tcTripsObj[$trip_category["id"]])):  foreach($tcTripsObj[$trip_category["id"]] as $trip): ?>
 
-                            <?php if(count($trip)>1): ?>
+                            <?php if((count($trip)>1)): ?>
 
-                            <?php foreach($trips as $trip): ?>
+                            <?php foreach($trips as $trip): if($trip->slug!=""): ?>
 
                                 <div class="swiper-slide text-center trip-card"> <a href="<?php  echo site_url('trips/'.$trip->slug); ?>"> <img class="trip-card-image lazy" src="<?php  echo site_url('assets/images/placeholder.png'); ?>" data-src="<?php  echo site_url('assets/images/trips/'.$trip->featured_image); ?>"> <div class="trip-meta"> <span class="location"><img src="<?php  echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon"> <?php echo $trip->location ; ?></span> <span class="duration"><img src="<?php  echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon"> <?php echo $trip->duration ; ?></span> </div> <h2 class="trip-title"><?php echo $trip->title ; ?></h2> </a> </div>
 
 
-                            <?php endforeach; ?>
+                            <?php endif;  endforeach; ?>
 
                             <?php else: $trip = $trip[0]; ?>
                            

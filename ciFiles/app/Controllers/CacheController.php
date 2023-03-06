@@ -37,7 +37,7 @@ class CacheController extends BaseController
 
             if($tripCategory["trips"]!=""){
 
-                echo $query = "SELECT GROUP_CONCAT(t.title SEPARATOR ',') as title, GROUP_CONCAT(t.slug SEPARATOR ',') as slug, GROUP_CONCAT(t.featured_image SEPARATOR ',') as featured_image, GROUP_CONCAT(t.duration SEPARATOR ',') as duration, GROUP_CONCAT(loc.title SEPARATOR ',') as location, GROUP_CONCAT(t.price SEPARATOR ',') as price, GROUP_CONCAT(t.sale_price SEPARATOR ',') as sale_price  FROM trips t JOIN locations loc on t.location = loc.id WHERE t.id IN (".str_replace(array("[","]"),array("",""),$tripCategory["trips"]).")";
+                $query = "SELECT GROUP_CONCAT(t.title SEPARATOR ',') as title, GROUP_CONCAT(t.slug SEPARATOR ',') as slug, GROUP_CONCAT(t.featured_image SEPARATOR ',') as featured_image, GROUP_CONCAT(t.duration SEPARATOR ',') as duration, GROUP_CONCAT(loc.title SEPARATOR ',') as location, GROUP_CONCAT(t.price SEPARATOR ',') as price, GROUP_CONCAT(t.sale_price SEPARATOR ',') as sale_price  FROM trips t JOIN locations loc on t.location = loc.id WHERE t.id IN (".str_replace(array("[","]"),array("",""),$tripCategory["trips"]).")";
                 
                 $tripsForCategory = $db->query($query)->getResult();
                 foreach ($tripsForCategory as $tripForCategory) {
@@ -59,7 +59,9 @@ class CacheController extends BaseController
                                 "price" => $tripPrices[$i],
                                 "sale_price" => $tripSalePrices[$i]
                             ];
-                            $tcTripsObj[$tripCategory["id"]][] = $trip;
+                            if($trip["slug"]!=""){
+                                $tcTripsObj[$tripCategory["id"]][] = $trip;
+                            }
                         }
                     } else {
                         $tcTripsObj[$tripCategory["id"]][] = $tripsForCategory;
@@ -70,6 +72,9 @@ class CacheController extends BaseController
             
             }
         }
+
+        
+
 
         $cache->save('tcTripsObj',$tcTripsObj,3600*24*365);
 

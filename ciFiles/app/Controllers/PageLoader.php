@@ -47,13 +47,15 @@ class PageLoader extends BaseController
         $tripsForCategory = $db->query($tcTripsQuery)->getResultArray();
 
         $cache = \Config\Services::cache();
+
+
         $data = [
             "title" => $heroTripCategory["title"],
             "trips" => $tripsForCategory,
             "featured_trips" => $cache->get("featured_trips"),
             "trip_categories" => $cache->get("trip_categories"),
             "trip_category_hero" => $heroTripCategory,
-            "tcTripsObj" => $cache->get("tcTripsObj")
+            "tcTripsObj" => $tripsForCategory
         ];
         
         $this->public_page_loader("trip_category",$data);
