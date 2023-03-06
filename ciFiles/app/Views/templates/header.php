@@ -115,7 +115,7 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/tblogo_temp.png'); ?>"></a>
                 <a href="#" id="sideNavToggle" class="d-sm-block d-md-block d-lg-none" style="margin-right: 1em;">
-                    <img src="<?php echo site_url('assets/icons/menu.svg'); ?>" style="width: 30px; height: 30px;">
+                    <img src="<?php echo site_url('assets/icons/menu_light.svg'); ?>" style="width: 30px; height: 30px;">
                 </a>
                 <form class="d-none d-lg-block" style="width: 37%;" action="<?php echo site_url('trip-search'); ?>" method="get">
                     <input type="text" name="universal_search" placeholder="Find what you love!" class="form-control">

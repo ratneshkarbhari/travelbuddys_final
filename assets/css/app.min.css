@@ -77,7 +77,7 @@ p.detail-info {
     font-weight: 600;
 }
 .nav-link {
-    color: #0a0a0a;
+    color: #495E97;
 }
 #desktop-right-nav {
     margin-left: 2em;
@@ -168,7 +168,7 @@ header#scroll nav {
 .swiper-button-next:after,
 .swiper-button-prev:after {
     font-size: 20px !important;
-    color: #0a0a0a !important;
+    color: #495E97 !important;
 }
 a {
     text-decoration: none;
@@ -211,7 +211,7 @@ header nav {
     width: 100%;
 }
 #sidenavCloser {
-    background-color: #0a0a0a;
+    background-color: #495E97;
     opacity: 0.5;
     position: fixed;
     left: 0;
@@ -237,7 +237,7 @@ header nav {
 #contact-hero,
 #contact-hero-touch {
     background-color: #0ff;
-    color: #0a0a0a;
+    color: #495E97;
 }
 .hero-section {
     width: 100%;
@@ -291,7 +291,7 @@ header nav {
     justify-content: center;
 }
 .trip-page-hero-section h1{
-    font-size: 4em;;
+    font-size: 3em;;
 }
 .trip-category-page-hero-section {
     align-items: center;
@@ -332,16 +332,16 @@ header#scroll {
     top: 0;
     left: 0;
     background-color: #495E97;
-    z-index: 2;
+    z-index: 6;
 }
 header#universal {
     top: 0;
     left: 0;
     background-color: #fff;
-    z-index: 5;
+    z-index: 8;
 }
 button.nav-link.tab-link.active {
-    background-color: #0a0a0a;
+    background-color: #495E97;
     color: #fff;
 }
 ul#myTab li {
@@ -351,7 +351,7 @@ ul#myTab li button {
     padding: 0.5em;
 }
 .date-box {
-    border: 1px solid #0a0a0a;
+    border: 1px solid #495E97;
     border-radius: 10px;
     color: #000;
     display: inline-block;
@@ -388,8 +388,8 @@ p.detail-info {
     font-size: 1em;
 }
 .trip-category-dropdown:hover {
-    background-color: #0a0a0a;
-    color: #fafafa;
+    background-color: #495E97;
+    color: #fafafa !important;
 }
 .nav-link:hover {
     transform: scale(1.1);
@@ -399,16 +399,18 @@ p.detail-info {
     color: white;
 }
 a.dropdown-item.trip-category-dropdown{
-    color: #000;
+    color: #fff;
 }
-.btn-custom,ul.dropdown-menu.show{
-    background-color: #fff;
-    color: #000;
+.btn-custom,.btn-custom:hover,ul.dropdown-menu.show{
+    background-color: #495E97;
+    color: #fff;
 }
 section#discounted-trips{
     background-color: #fafafa;
 }
-
+.navbar-nav .nav-link.active{
+    color: #495E97 !important;
+}
 @media (min-width: 1281px) {
     .navbar-brand {
         width: 20%;
