@@ -110,7 +110,7 @@
         </nav>
     </header>
 
-    <header id="scroll">
+    <header id="scroll" class="d-none">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
                 <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/tblogo_temp.png'); ?>"></a>
