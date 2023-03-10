@@ -113,7 +113,7 @@
     <header id="scroll" class="d-none">
         <nav class="navbar navbar-expand-lg ">
             <div class="container-fluid">
-                <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/tblogo_temp.png'); ?>"></a>
+                <a class="navbar-brand" href="<?php echo site_url(''); ?>"><img src="<?php echo site_url('assets/images/tbuddy_logo_scroll.png'); ?>"></a>
                 <a href="#" id="sideNavToggle" class="d-sm-block d-md-block d-lg-none" style="margin-right: 1em;">
                     <img src="<?php echo site_url('assets/icons/menu_light.svg'); ?>" style="width: 30px; height: 30px;">
                 </a>

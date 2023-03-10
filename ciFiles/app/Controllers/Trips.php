@@ -352,20 +352,20 @@ class Trips extends BaseController
             ];
 
             $created = $tripModel->update($this->request->getPost("tripId"),$tripObj);
-            $tripId = $tripModel->getInsertID();
-
+            
             if($created){
                 $tcModel = new TripCategory();
 
                 $tripCategories = $tcModel->find($this->request->getPost("trip_categories"));
 
+
                 foreach ($tripCategories as $trip_category) {
                     $jsondecoedRes = json_decode($trip_category["trips"],TRUE);
                     if (is_array($jsondecoedRes)) {
-                        $jsondecoedRes[] = $tripId;
+                        $jsondecoedRes[] = $previousTripData["id"];
                     } else {
                         $jsondecoedRes = [];
-                        $jsondecoedRes[] = $tripId;
+                        $jsondecoedRes[] = $previousTripData["id"];
                     }
                     $jsondecoedRes = array_unique($jsondecoedRes);
                     $tripsJson = json_encode($jsondecoedRes);
@@ -374,6 +374,8 @@ class Trips extends BaseController
                         ["trips"=>$tripsJson]
                     );
                 }
+
+
             }
 
             if ($created) {
