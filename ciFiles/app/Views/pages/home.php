@@ -164,11 +164,11 @@
         </div>
     </section>
 
-    <section id="trip-categories" class="regular-section bg-light-gray">
+    <section id="trip-categories" class="regular-section" style="background-color: #495e97; color: white;">
 
         <div class="container">
 
-            <h1 class="section-title text-center">cATEGORIES</h1>
+            <h1 class="section-title text-center text-light">cATEGORIES</h1>
 
 
             <div class="row">
@@ -180,7 +180,7 @@
                         <a href="<?php echo site_url('trip-categories/' . $trip_category["slug"]) ?>">
                             <img class="w-50 lazy" src="<?php echo site_url('assets/images/trip_categories/' . $trip_category["featured_image"]) ?>">
 
-                            <h5 class="trip-title"><?php echo $trip_category["title"]; ?></h5>
+                            <h5 class="trip-title text-light"><?php echo $trip_category["title"]; ?></h5>
                         </a>
                     </div>
 
