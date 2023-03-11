@@ -34,7 +34,7 @@
 
     <section class="text-center d-lg-none" id="home-hero-touch" style="background-image: url('<?php echo site_url('assets/images/hero_touch.jpg'); ?>'); background-size: cover;
     background-position: center;">
-    <div class="color-overlay" style="height: 98vh;"></div>
+    <div class="color-overlay" style="height: 90vh;"></div>
 
         <div class="section">
 
