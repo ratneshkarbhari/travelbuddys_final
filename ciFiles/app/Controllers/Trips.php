@@ -119,6 +119,17 @@ class Trips extends BaseController
                 $bannerImageRandomName="noimage.jpg";
             }
 
+            $bannerImageTouch = $this->request->getFile('banner_image_touch');
+
+            if (! $bannerImageTouch->hasMoved()&&$bannerImageTouch->isValid()) {
+                $bannerImageTouchRandomName = $bannerImageTouch->getRandomName();
+
+                $bannerImageTouch->move('assets/images/trips', $bannerImageTouchRandomName);
+
+            }else {
+                $bannerImageTouchRandomName="noimage.jpg";
+            }
+
             $brochure = $this->request->getFile('brochure');
 
             if (! $brochure->hasMoved()&&$brochure->isValid()) {
@@ -172,6 +183,7 @@ class Trips extends BaseController
                 "drop_city" => $this->request->getPost("drop_city"),
                 "featured_image" => $featuredImageRandomName,
                 "banner_image" => $bannerImageRandomName,
+                "banner_image_touch" => $bannerImageTouchRandomName,
                 "gallery_images" => $galleryImageNames,
                 "brochure" => $brochureRandomName,
                 "itinerary" => $this->request->getPost("itinerary"),
@@ -283,6 +295,17 @@ class Trips extends BaseController
                 $bannerImageRandomName=$previousTripData["banner_image"];
             }
 
+            $bannerImageTouch = $this->request->getFile('banner_image_touch');
+
+            if (! $bannerImageTouch->hasMoved()&&$bannerImageTouch->isValid()) {
+                $bannerImageTouchRandomName = $bannerImageTouch->getRandomName();
+
+                $bannerImageTouch->move('assets/images/trips', $bannerImageTouchRandomName);
+
+            }else {
+                $bannerImageTouchRandomName=$previousTripData["banner_image_touch"];
+            }
+
             $brochure = $this->request->getFile('brochure');
 
             if (! $brochure->hasMoved()&&$brochure->isValid()) {
@@ -345,6 +368,7 @@ class Trips extends BaseController
                 "drop_city" => $this->request->getPost("drop_city"),
                 "featured_image" => $featuredImageRandomName,
                 "banner_image" => $bannerImageRandomName,
+                "banner_image_touch" => $bannerImageTouchRandomName,
                 "gallery_images" => $galleryImageNames,
                 "brochure" => $brochureRandomName,
                 "itinerary" => $this->request->getPost("itinerary"),

@@ -31,7 +31,7 @@
 
     </section>
     <section class="text-left d-sm-block d-md-block d-lg-none text-dark hero-section trip-page-hero"
-        style="background-image: url('<?php echo site_url("assets/images/trips/".$focus_trip["banner_image"]); ?>'); background-size: cover; background-position: center;" id="trip-hero-touch">
+        style="background-image: url('<?php echo site_url("assets/images/trips/".$focus_trip["banner_image_touch"]); ?>'); background-size: cover; background-position: center;" id="trip-hero-touch">
 
 
 

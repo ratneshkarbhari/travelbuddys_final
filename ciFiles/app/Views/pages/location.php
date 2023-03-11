@@ -23,7 +23,7 @@
 
 
 
-        <div class="trip-category-page-hero-section" style="justify-content:left;">
+        <div class="trip-category-page-hero-section" style="justify-content:center;">
             <h1 class="text-light"><?php echo $location["title"]; ?></h1>
 
 
