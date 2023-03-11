@@ -104,6 +104,11 @@
               <input type="file" class="form-control" name="banner_image" accept="image/*">
               <div id="fileHelpId" class="form-text">Select a banner image</div>
             </div>
+            <div class="mb-3">
+              <label for="" class="form-label">Banner Image Mobile  / Touch</label>
+              <input type="file" class="form-control" name="banner_image_touch" accept="image/*">
+              <div id="fileHelpId" class="form-text">Select a banner image for touch</div>
+            </div>
 
 
             <div class="mb-3">
