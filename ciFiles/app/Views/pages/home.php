@@ -139,7 +139,7 @@
                                     </p>
 
                                 </div>
-                                <h2 class="trip-title"><?php echo $featured_trip->title; ?></h2>
+                                <h2 class="trip-title"><?php echo str_replace(" ","<br  >",$featured_trip->title); ?></h2>
                             </a>
                         </div>
 
@@ -241,7 +241,7 @@
                         <div class="swiper-slide text-center trip-card">
                             <a href="<?php echo site_url('locations/' . $location->slug) ?>">
                                 <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/locations/' . $location->featured_image) ?>">
-                                <h5 class="trip-title"><?php echo $location->title; ?></h5>
+                                <h5 class="trip-title"><?php echo str_replace(" ","<br  >",$location->title);; ?></h5>
                             </a>
                         </div>
 
@@ -336,7 +336,7 @@
                                                     }    ?>
                                         </p>
                                     </div>
-                                    <h2 class="trip-title"><?php echo $trip->title; ?></h2>
+                                    <h2 class="trip-title"><?php echo str_replace(" ","<br  >",$trip->title);; ?></h2>
                                 </a>
                             </div>
                         <?php endif; ?>
@@ -472,7 +472,7 @@
                                                     }    ?>
                                                         </p>
                                                     </div>
-                                                    <h2 class="trip-title"><?php echo $trip->title; ?></h2>
+                                                    <h2 class="trip-title"><?php echo str_replace(" ","<br>",$trip->title); ?></h2>
                                                 </a>
                                             </div>
 
@@ -497,7 +497,7 @@
                                                     }    ?>
                                                     </p>
                                                 </div>
-                                                <h2 class="trip-title"><?php echo $trip->title; ?></h2>
+                                                <h2 class="trip-title"><?php echo str_replace(" ","<br>",$trip->title); ?></h2>
                                             </a>
                                         </div>
 
