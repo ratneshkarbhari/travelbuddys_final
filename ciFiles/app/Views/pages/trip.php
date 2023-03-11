@@ -116,7 +116,7 @@
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link tab-link" id="inclusion-tab" data-bs-toggle="tab"
                                         data-bs-target="#inclusion-tab-pane" type="button" role="tab" aria-controls="inclusion-tab-pane"
-                                        aria-selected="false">INLCUSION</button>
+                                        aria-selected="false">INCLUSION</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <button class="nav-link tab-link" id="exclusion-tab" data-bs-toggle="tab"

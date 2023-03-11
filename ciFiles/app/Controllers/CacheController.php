@@ -41,8 +41,6 @@ class CacheController extends BaseController
                 
                 $tripsForCategory = $db->query($query)->getResult();
 
-
-
                 foreach ($tripsForCategory as $tripForCategory) {
                     // if (count(explode(',',$tripForCategory->title))>1) {
                         $tripTitles = explode(',',$tripForCategory->title);

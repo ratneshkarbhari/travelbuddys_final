@@ -529,13 +529,13 @@
     <?php endif;
     endforeach; ?>
 
-    <section id="testimonials" class="regular-section">
+    <section id="testimonials" class="regular-section" style="background-color: #495e97; color: white;">
 
         <div class="container">
 
-            <h1 class="section-title">testimonials</h1>
+            <h1 class="section-title text-light">testimonials</h1>
 
-            <div class="swiper swiper-trips d-none d-lg-block">
+            <div class="swiper swiper-trips d-none d-lg-block ">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper container">
 
@@ -543,7 +543,7 @@
 
                         <?php if ($testimonial->youtube_video_link != "") : ?>
 
-                            <div class="swiper-slide text-center trip-card">
+                            <div class="swiper-slide text-center trip-card bg-light">
                                 <a href="<?php echo $testimonial->youtube_video_link ?>" data-lity>
                                     <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/testimonials/' . $testimonial->thumbnail) ?>">
 
@@ -580,7 +580,7 @@
 
                         <?php if ($testimonial->youtube_video_link != "") : ?>
 
-                            <div class="swiper-slide text-center trip-card">
+                            <div class="swiper-slide text-center trip-card bg-light">
                                 <a href="<?php echo $testimonial->youtube_video_link ?>" data-lity>
                                     <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/testimonials/' . $testimonial->thumbnail) ?>">
 
