@@ -32,7 +32,9 @@
 
     </section>
 
-    <section class="text-center d-lg-none" id="home-hero-touch">
+    <section class="text-center d-lg-none" id="home-hero-touch" style="background-image: url('<?php echo site_url('assets/images/hero_touch.jpg'); ?>'); background-size: cover;
+    background-position: center;">
+    <div class="color-overlay" style="height: 98vh;"></div>
 
         <div class="section">
 
@@ -48,7 +50,7 @@
                 </div>
             </form>
 
-            <div class="video-container">
+            <!-- <div class="video-container">
                 <div class="color-overlay"></div>
                 <video poster="<?php echo site_url("assets/images/touch_hero_poster.jpg"); ?>" autoplay loop muted style="    bottom: 2em;
                 position: absolute;
@@ -57,7 +59,7 @@
                 right: 0;">
                     <source src="<?php echo site_url("assets/videos/hero_touch.mp4"); ?>" type="video/mp4">
                 </video>
-            </div>
+            </div> -->
 
         </div>
 
@@ -180,7 +182,7 @@
                         <a href="<?php echo site_url('trip-categories/' . $trip_category["slug"]) ?>">
                             <img class="w-50 lazy" src="<?php echo site_url('assets/images/trip_categories/' . $trip_category["featured_image"]) ?>">
 
-                            <h5 class="trip-title text-light"><?php echo $trip_category["title"]; ?></h5>
+                            <h6 class="trip-title text-light"><?php echo $trip_category["title"]; ?></h6>
                         </a>
                     </div>
 
@@ -529,11 +531,11 @@
     <?php endif;
     endforeach; ?>
 
-    <section id="testimonials" class="regular-section" style="background-color: #495e97; color: white;">
+    <section id="testimonials" class="regular-section" >
 
         <div class="container">
 
-            <h1 class="section-title text-light">testimonials</h1>
+            <h1 class="section-title">testimonials</h1>
 
             <div class="swiper swiper-trips d-none d-lg-block ">
                 <!-- Additional required wrapper -->
