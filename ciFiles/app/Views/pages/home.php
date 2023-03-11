@@ -127,7 +127,7 @@
                                 <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/trips/' . $featured_trip->featured_image) ?>">
                                 <div class="trip-meta">
                                     <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
-                                        <?php echo $featured_trip->location; ?></span><br>
+                                        <?php echo $featured_trip->location; ?></span>
                                     <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
                                         <?php echo $featured_trip->duration; ?></span>
                                     <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
@@ -325,7 +325,7 @@
                                     <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/trips/' . $trip->featured_image) ?>">
                                     <div class="trip-meta">
                                         <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
-                                            <?php echo $trip->location; ?></span><br>
+                                            <?php echo $trip->location; ?></span>
                                         <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
                                             <?php echo $trip->duration; ?></span>
                                         <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
@@ -461,7 +461,7 @@
                                                     <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/trips/' . $trip->featured_image) ?>">
                                                     <div class="trip-meta">
                                                         <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
-                                                            <?php echo $trip->location; ?></span><br>
+                                                            <?php echo $trip->location; ?></span>
                                                         <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
                                                             <?php echo $trip->duration; ?></span>
                                                         <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
