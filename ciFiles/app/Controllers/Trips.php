@@ -99,7 +99,7 @@ class Trips extends BaseController
 
                 \Config\Services::image()
                 ->withFile($featuredImage)
-                ->resize(257, 205, true, 'height')
+                ->resize(385.5, 307.5, true, 'height')
                 ->save('./assets/images/trips/'. $featuredImageRandomName);
 
                 // $featuredImage->move('assets/images/trips', $featuredImageRandomName);
@@ -274,7 +274,7 @@ class Trips extends BaseController
 
                 \Config\Services::image()
                 ->withFile($featuredImage)
-                ->resize(257, 205, true, 'height')
+                ->resize(385.5, 307.5, true, 'height')
                 ->save('./assets/images/trips/'. $featuredImageRandomName);
 
 

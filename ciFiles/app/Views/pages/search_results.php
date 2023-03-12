@@ -4,7 +4,7 @@
 
 
 <!-- HOME HERO -->
-<section class="text-left d-none d-lg-block text-dark hero-section trip-category-page-hero" style="background-image: url( '<?php echo site_url('assets/images/trip_bg.jpg') ?>'); background-size: 'cover';" id="trip-hero">
+<section class="text-left d-none d-lg-block text-dark hero-section trip-category-page-hero" style="background-image: url( '<?php echo site_url('assets/images/trip_bg.jpg'); ?>'); background-size: 'cover';" id="trip-hero">
 
 
 
@@ -20,7 +20,7 @@
 
 </section>
 
-<section class="text-center d-lg-none text-dark hero-section text-left text-dark hero-section trip-category-page-hero" style="background-image: site_url( '<?php echo site_url('assets/images/trip_bg.jpg') ?>'); background-size: 'cover';"  id="contact-hero-touch">
+<section class="text-center d-lg-none text-dark hero-section text-left text-dark hero-section trip-category-page-hero" style="background-image: url( '<?php echo site_url('assets/images/trip_bg.jpg'); ?>'); background-size: 'cover';"  id="contact-hero-touch">
 
 
 

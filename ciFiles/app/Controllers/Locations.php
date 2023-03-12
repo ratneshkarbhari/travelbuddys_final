@@ -50,7 +50,7 @@ class Locations extends BaseController
 
                 \Config\Services::image()
                 ->withFile($featuredImage)
-                ->resize(257, 205, true, 'height')
+                ->resize(385.5, 307.5, true, 'height')
                 ->save('./assets/images/locations/'. $featuredImageRandomName);
 
                 // $featuredImage->move('assets/images/locations', $featuredImageRandomName);
@@ -79,7 +79,7 @@ class Locations extends BaseController
 
                 \Config\Services::image()
                 ->withFile($thumbnailImage)
-                ->resize(257, 205, true, 'height')
+                ->resize(385.5, 307.5, true, 'height')
                 ->save('./assets/images/locations/'. $thumbnailImageRandomName);
 
             }else {
@@ -144,7 +144,7 @@ class Locations extends BaseController
 
                 \Config\Services::image()
                 ->withFile($featuredImage)
-                ->resize(257, 205, true, 'height')
+                ->resize(385.5, 307.5, true, 'height')
                 ->save('./assets/images/locations/'. $featuredImageRandomName);
 
             }else {
@@ -157,7 +157,7 @@ class Locations extends BaseController
             if (! $bannerImage->hasMoved()&&$bannerImage->isValid()) {
                 $bannerImageRandomName = $bannerImage->getRandomName();
 
-                $bannerImage->move('assets/images/locations', $bannerImageRandomName);
+                $bannerImage->move('assets/images/locations/', $bannerImageRandomName);
 
             }else {
                 $bannerImageRandomName=$prevLocationData["banner_image"];
@@ -172,8 +172,8 @@ class Locations extends BaseController
 
                 \Config\Services::image()
                 ->withFile($thumbnailImage)
-                ->resize(257, 205, true, 'height')
-                ->save('./assets/images/trips/'. $thumbnailImageRandomName);
+                ->resize(385.5, 307.5, true, 'height')
+                ->save('./assets/images/locations/'. $thumbnailImageRandomName);
 
             }else {
                 $thumbnailImageRandomName=$prevLocationData["thumbnail"];
