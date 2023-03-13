@@ -22,7 +22,7 @@
 
             <div class="video-container">
                 <div class="color-overlay"></div>
-                <video poster="<?php echo site_url("assets/images/desktop_hero_poster.jpg"); ?>" autoplay loop muted src="<?php echo site_url("assets/videos/video.mp4"); ?>" type="video/mp4">
+                <video style="width: 100%;" poster="<?php echo site_url("assets/images/desktop_hero_poster.jpg"); ?>" autoplay loop muted src="<?php echo site_url("assets/videos/video.mp4"); ?>" type="video/mp4">
                 </video>
             </div>
 
