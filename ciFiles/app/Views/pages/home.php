@@ -208,7 +208,7 @@
 
                     <?php foreach ($locations as $location) : ?>
 
-                        <div class="swiper-slide text-center trip-card">
+                        <div class="swiper-slide text-center">
                             <a href="<?php echo site_url('locations/' . $location->slug) ?>">
                                 <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png'); ?>" data-src="<?php echo site_url('assets/images/locations/' . $location->featured_image); ?>">
                                 <h2 class="trip-title"><?php echo $location->title; ?></h2>
