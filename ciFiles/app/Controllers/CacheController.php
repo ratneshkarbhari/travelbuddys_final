@@ -20,7 +20,7 @@ class CacheController extends BaseController
         $cache->save('featured_trips',$featured_trips,3600*24*365);
 
 
-        $trips = $db->query("SELECT t.title,t.slug,t.featured_image,t.duration,loc.title as location,t.sale_price FROM trips t JOIN locations loc on t.location = loc.id")->getResult();
+        $trips = $db->query("SELECT t.title,t.slug,t.featured_image,t.duration,loc.title as location,t.price,t.sale_price FROM trips t JOIN locations loc on t.location = loc.id")->getResult();
 
 
         $cache->save('trips',$trips,3600*24*365);
@@ -75,6 +75,10 @@ class CacheController extends BaseController
             }
         }
 
+        print_r($tcTripsObj);
+
+
+        exit
 
         $cache->save('tcTripsObj',$tcTripsObj,3600*24*365);
 

@@ -108,8 +108,8 @@
                 <!-- <div class="swiper-pagination"></div> -->
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev-custom"></div>
+                <div class="swiper-button-next-custom"></div>
 
                 <!-- If we need scrollbar -->
                 <!-- <div class="swiper-scrollbar"></div> -->
@@ -283,7 +283,7 @@
                                             Starts at ₹ <?php if ($trip->sale_price == 0.00) {
                                                         echo $trip->price;
                                                     } else {
-                                                        echo $trip->sale_price;
+                                                        echo $trip->sale_price." | <s> ₹ ".$trip->price."</s>";
                                                     }    ?>
                                         </p>
                                     </div>
@@ -329,10 +329,10 @@
                                         <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
                                             <?php echo $trip->duration; ?></span>
                                         <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
-                                            Starts at ₹  <?php if ($trip->sale_price == 0.00) {
+                                            Starts at ₹ <?php if ($trip->sale_price == 0.00) {
                                                         echo $trip->price;
                                                     } else {
-                                                        echo $trip->sale_price;
+                                                        echo $trip->sale_price." | <s> ₹ ".$trip->price."</s>";
                                                     }    ?>
                                         </p>
                                     </div>
