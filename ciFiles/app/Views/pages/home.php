@@ -547,7 +547,7 @@
 
                             <div class="swiper-slide text-center trip-card bg-light">
                                 <a href="<?php echo $testimonial->youtube_video_link ?>" data-lity>
-                                    <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/testimonials/' . $testimonial->thumbnail) ?>">
+                                    <img class="lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/testimonials/' . $testimonial->thumbnail) ?>">
 
                                     <h2 class="trip-title"><?php echo $testimonial->title; ?></h2>
 
@@ -584,7 +584,7 @@
 
                             <div class="swiper-slide text-center trip-card bg-light">
                                 <a href="<?php echo $testimonial->youtube_video_link ?>" data-lity>
-                                    <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/testimonials/' . $testimonial->thumbnail) ?>">
+                                    <img class="lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/testimonials/' . $testimonial->thumbnail) ?>">
 
                                     <h2 class="trip-title"><?php echo $testimonial->title; ?></h2>
 

@@ -408,7 +408,7 @@
 
                     <div class="swiper-slide text-center trip-card">
                         <a href="#">
-                            <img class="trip-card-image" src="<?php echo site_url('assets/images/testimonials/'.$testimonial->thumbnail) ?>">
+                            <img class="lazy" src="<?php echo site_url('assets/images/testimonials/'.$testimonial->thumbnail) ?>">
                             
                             <h4 class="trip-title"><?php $testimonial->title ?></h4>
 
@@ -458,7 +458,7 @@
 
                     <div class="swiper-slide text-center trip-card">
                         <a href="#">
-                            <img class="trip-card-image" src="<?php echo site_url('assets/images/testimonials/'.$testimonial->thumbnail) ?>">
+                            <img class="lazy" src="<?php echo site_url('assets/images/testimonials/'.$testimonial->thumbnail) ?>">
                             
                             <h4 class="trip-title"><?php $testimonial->title ?></h4>
                             
