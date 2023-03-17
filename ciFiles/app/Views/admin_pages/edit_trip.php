@@ -27,9 +27,7 @@
 
         <br><br>
 
-        <?php $tcIds = []; foreach($trip_categories as $trip_category){
-          $tcIds[] = $trip_category["id"];
-        } $trip_category_ids = json_encode($tcIds); echo form_open_multipart(site_url("update/trip")); ?>
+        <?php echo form_open_multipart(site_url("update/trip")); ?>
 
             <input type="hidden" name="tripId" value="<?php echo $trip["id"]; ?>">
             <!-- <input type="hidden" name="tcids" value="<?php echo $trip_category_ids; ?>"> -->
