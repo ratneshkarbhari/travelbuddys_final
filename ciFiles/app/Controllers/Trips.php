@@ -10,7 +10,6 @@ class Trips extends BaseController
 {
 
     protected $pageLoader;
-    protected $cache;
 
     public function __construct() {
         $this->pageLoader = new PageLoader();
@@ -380,18 +379,29 @@ class Trips extends BaseController
             if($created){
                 $tcModel = new TripCategory();
 
-                $allTc = $this->cache->get("trip_categories");
+                $allTc = $tcModel->findAll();
 
+                foreach($allTc as $tc){
+
+                    $trips = json_decode($tc["trips"],TRUE);
+                    
+                    $tripKey = array_search($this->request->getPost("tripId"),$trips);
+                    
+                    unset($trips[$tripKey]);
+
+                    $trips = array_values($trips);
+
+                    $tc["trips"] = json_encode($trips);
+                    $tcModel->update($tc["id"],$tc);
+                }
 
                 $tripCategories = $tcModel->find($this->request->getPost("trip_categories"));
 
 
                 foreach ($tripCategories as $trip_category) {
 
-                        foreach($allTc as $tc){
-                            $tripIdArray = json_decode($tc["trips"],TRUE);
-                            
-                        }
+                    
+
                         $jsondecoedRes = json_decode($trip_category["trips"],TRUE);
                         if (is_array($jsondecoedRes)) {
                             $jsondecoedRes[] = $previousTripData["id"];
@@ -400,7 +410,7 @@ class Trips extends BaseController
                             $jsondecoedRes[] = $previousTripData["id"];
                         }
                         $jsondecoedRes = array_unique($jsondecoedRes);
-                        $tripsJson = json_encode($jsondecoedRes);
+                        echo $tripsJson = json_encode($jsondecoedRes);
                         $tcModel->update(
                             $trip_category["id"],
                         ["trips"=>$tripsJson]
@@ -409,7 +419,6 @@ class Trips extends BaseController
 
 
             }
-
             if ($created) {
                 return redirect()->to(site_url("edit/trip/".$slug."?success_message=Trip updated successfully"));
             } else {
