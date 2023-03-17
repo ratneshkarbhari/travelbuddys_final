@@ -45,20 +45,27 @@
         <div class="row">
 
 
-            <?php foreach($trips as $trip): ?>
+            <?php foreach($trips as $trip): $trip_json = json_encode($trip); $trip = json_decode($trip_json,TRUE); ?>
                 
 
             <div class="col-lg-3 col-md-6 col-sm-12 text-center" style="margin-bottom: 7em; height: 100%;">
-                <a href="<?php echo site_url('trips/'.$trip->slug) ?>">
-                    <img class="trip-card-image lazy" src="<?php echo site_url("assets/images/placeholder.png") ?>" data-src="<?php echo site_url('assets/images/trips/'.$trip->featured_image) ?>">
-                    <div class="trip-meta">
-                        <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
-                            <?php echo $trip->location ?></span>
-                        <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
-                            <?php echo $trip->duration ?></span>
-                    </div>
-                    <h2 class="trip-title"><?php echo $trip->title ?></h2>
-                </a>
+            <a href="<?php echo site_url('trips/' . $trip["slug"]) ?>">
+                                <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/trips/' . $trip["featured_image"]) ?>">
+                                <div class="trip-meta">
+                                    <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
+                                        <?php echo $trip["location"]; ?></span>
+                                    <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
+                                        <?php echo $trip["duration"]; ?></span>
+                                    <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
+                                        Starts at ₹ <?php if ($trip["sale_price"] == 0.00) {
+                                                        echo $trip["price"];
+                                                    } else {
+                                                        echo $trip["sale_price"];
+                                                    }    ?>
+                                    </p>
+                                </div>
+                                <h2 class="trip-title"><?php echo $trip["title"]; ?></h2>
+                            </a>
             </div>
 
 

@@ -380,21 +380,29 @@ class Trips extends BaseController
             if($created){
                 $tcModel = new TripCategory();
 
+                $allTc = $this->cache->get("trip_categories");
+
+
                 $tripCategories = $tcModel->find($this->request->getPost("trip_categories"));
 
 
                 foreach ($tripCategories as $trip_category) {
-                    $jsondecoedRes = json_decode($trip_category["trips"],TRUE);
-                    if (is_array($jsondecoedRes)) {
-                        $jsondecoedRes[] = $previousTripData["id"];
-                    } else {
-                        $jsondecoedRes = [];
-                        $jsondecoedRes[] = $previousTripData["id"];
-                    }
-                    $jsondecoedRes = array_unique($jsondecoedRes);
-                    $tripsJson = json_encode($jsondecoedRes);
-                    $tcModel->update(
-                        $trip_category["id"],
+
+                        foreach($allTc as $tc){
+                            $tripIdArray = json_decode($tc["trips"],TRUE);
+                            
+                        }
+                        $jsondecoedRes = json_decode($trip_category["trips"],TRUE);
+                        if (is_array($jsondecoedRes)) {
+                            $jsondecoedRes[] = $previousTripData["id"];
+                        } else {
+                            $jsondecoedRes = [];
+                            $jsondecoedRes[] = $previousTripData["id"];
+                        }
+                        $jsondecoedRes = array_unique($jsondecoedRes);
+                        $tripsJson = json_encode($jsondecoedRes);
+                        $tcModel->update(
+                            $trip_category["id"],
                         ["trips"=>$tripsJson]
                     );
                 }

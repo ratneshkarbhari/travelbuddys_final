@@ -162,7 +162,7 @@ class PageLoader extends BaseController
         $cache = \Config\Services::cache();
 
 
-        $query = "SELECT t.title,t.slug,t.featured_image,t.duration,loc.title as location FROM trips t JOIN locations loc ON t.location = loc.id WHERE (t.title LIKE '%".$search_query."%'
+        $query = "SELECT t.title,t.slug,t.featured_image,t.duration,loc.title as location, t.sale_price as sale_price, t.price as price FROM trips t JOIN locations loc ON t.location = loc.id WHERE (t.title LIKE '%".$search_query."%'
         OR t.slug LIKE '%".$search_query."%'
         OR t.description LIKE '%".$search_query."%')";
 
@@ -198,5 +198,35 @@ class PageLoader extends BaseController
 
         
     }
+
+    public function tnc()
+    {        $cache = \Config\Services::cache();
+
+        $data = [
+            "title" => "Terms and Conditions",
+            "trip_categories" => $cache->get("trip_categories"),
+
+        ];
+        echo view("templates/header",$data);
+        echo view("pages/tnc",$data);
+        echo view("templates/footer",$data);
+
+    }
+
+    public function privacy_policy()
+    {
+        $cache = \Config\Services::cache();
+
+        $data = [
+            "title" => "Privacy Policy",
+            "trip_categories" => $cache->get("trip_categories"),
+
+        ];
+        echo view("templates/header",$data);
+        echo view("pages/privacy_policy",$data);
+        echo view("templates/footer",$data);
+
+    }
+
 
 }

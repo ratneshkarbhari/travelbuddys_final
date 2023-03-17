@@ -40,6 +40,8 @@ $routes->get('/trips/(:any)', 'PageLoader::trip/$1');
 $routes->get('/universal-search', 'PageLoader::trip_search');
 $routes->get("/about","PageLoader::about");
 $routes->get("/contact","PageLoader::contact");
+$routes->get("/terms-and-conditions","PageLoader::tnc");
+$routes->get("/privacy-policy","PageLoader::privacy_policy");
 $routes->post('/create-lead', 'Leads::create_lead');
 $routes->get("/trip-search", "PageLoader::search");
 $routes->post("/send-contact-email","Leads::send_contact_email");

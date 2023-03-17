@@ -4,7 +4,7 @@
 
 
     <!-- HOME HERO -->
-    <section class="text-left d-none d-lg-block text-dark hero-section trip-page-hero"
+    <section class="text-center d-none d-lg-block text-dark hero-section trip-page-hero"
         style="background-image: url('<?php echo site_url("assets/images/trips/".$focus_trip["banner_image"]); ?>'); background-size: cover;" id="trip-hero">
 
 
@@ -30,7 +30,7 @@
 
 
     </section>
-    <section class="text-left d-sm-block d-md-block d-lg-none text-dark hero-section trip-page-hero"
+    <section class="text-center d-sm-block d-md-block d-lg-none text-dark hero-section trip-page-hero"
         style="background-image: url('<?php if(is_file(site_url("assets/images/trips/".$focus_trip["banner_image_touch"]))){echo site_url("assets/images/trips/".$focus_trip["banner_image_touch"]);}else{
             echo site_url("assets/images/trips/".$focus_trip["banner_image"]);
         }  ?>'); background-size: cover; background-position: center;" id="trip-hero-touch">
@@ -226,8 +226,8 @@
 
                                                 
                                     <div class="swiper-slide text-center trip-card">
-                                        <a href="<?php echo site_url("assets/images/trips_gallery_images/".$gallery_image) ?>" data-lity>
-                                            <img class="trip-card-image" src="<?php echo site_url("assets/images/trips_gallery_images/".$gallery_image) ?>">
+                                        <a href="<?php echo site_url("assets/images/trips/".$gallery_image) ?>" data-lity>
+                                            <img class="trip-card-image" src="<?php echo site_url("assets/images/trips/".$gallery_image) ?>">
                                             <div class="trip-meta d-none">
                                                 <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon"><?php $focus_trip["location"] ?></span>
                                                 <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon"><?php $focus_trip["duration"] ?><</span>
@@ -487,7 +487,6 @@
     </section>
 
     <section id="featured-trips" class="regular-section">
-
         <div class="container">
 
             <h1 class="section-title">Featured Trips</h1>
@@ -496,24 +495,30 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper container">
 
-                    <?php foreach($featured_trips as $featured_trip):
-                    if($focus_trip["slug"]!=$featured_trip->slug): ?>
-                                            
-                    <div class="swiper-slide text-center trip-card">
-                        <a href="<?php echo site_url('trips/'.$featured_trip->slug) ?>">
-                            <img class="trip-card-image" src="<?php echo site_url('assets/images/trips/'.$featured_trip->featured_image) ?>">
-                            <div class="trip-meta">
-                                <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
-                                    <?php echo $featured_trip->location ?></span>
-                                <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
-                                    <?php echo $featured_trip->duration ?></span>
-                            </div>
-                            <h6 class="trip-title"><?php echo $featured_trip->title ?></h6>
-                        </a>
-                    </div>
 
+                    <?php foreach ($featured_trips as $featured_trip) : ?>
 
-                    <?php endif; endforeach; ?>
+                        <div class="swiper-slide text-center trip-card">
+                            <a href="<?php echo site_url('trips/' . $featured_trip->slug) ?>">
+                                <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/trips/' . $featured_trip->featured_image) ?>">
+                                <div class="trip-meta">
+                                    <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
+                                        <?php echo $featured_trip->location; ?></span>
+                                    <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
+                                        <?php echo $featured_trip->duration; ?></span>
+                                    <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
+                                        Starts at ₹ <?php if ($featured_trip->sale_price == 0.00) {
+                                                        echo $featured_trip->price;
+                                                    } else {
+                                                        echo $featured_trip->sale_price;
+                                                    }    ?>
+                                    </p>
+                                </div>
+                                <h2 class="trip-title"><?php echo $featured_trip->title; ?></h2>
+                            </a>
+                        </div>
+
+                    <?php endforeach; ?>
 
 
 
@@ -522,8 +527,8 @@
                 <!-- <div class="swiper-pagination"></div> -->
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev-custom"></div>
+                <div class="swiper-button-next-custom"></div>
 
                 <!-- If we need scrollbar -->
                 <!-- <div class="swiper-scrollbar"></div> -->
@@ -533,41 +538,51 @@
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper container">
 
-                    <?php foreach($featured_trips as $featured_trip):
-                    if($focus_trip["slug"]!=$featured_trip->slug): ?>
-
-                    <div class="swiper-slide text-center trip-card">
-                        <a href="<?php echo site_url('trips/'.$featured_trip->slug) ?>">
-                            <img class="trip-card-image" src="<?php echo site_url('assets/images/trips/'.$featured_trip->featured_image) ?>">
-                            <div class="trip-meta">
-                                <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
-                                    <?php $featured_trip->location ?></span>
-                                <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
-                                    <?php $featured_trip->duration ?></span>
-                            </div>
-                            <h2 class="trip-title"><?php $featured_trip->title ?></h2>
-                        </a>
-                    </div>
+                    <?php foreach ($featured_trips as $featured_trip) : ?>
 
 
-                    <?php endif; endforeach; ?>
+                        <div class="swiper-slide text-center trip-card">
+                            <a href="<?php echo site_url('trips/' . $featured_trip->slug) ?>">
+                                <img class="trip-card-image lazy" src="<?php echo site_url('assets/images/placeholder.png') ?>" data-src="<?php echo site_url('assets/images/trips/' . $featured_trip->featured_image) ?>">
+                                <div class="trip-meta">
+                                    <span class="location"><img src="<?php echo site_url('assets/icons/location.svg') ?>" class="trip-meta-icon">
+                                        <?php echo $featured_trip->location; ?></span>
+                                    <span class="duration"><img src="<?php echo site_url('assets/icons/schedule.svg') ?>" class="trip-meta-icon">
+                                        <?php echo $featured_trip->duration; ?></span>
+                                    <p style="margin-bottom: 0; font-size: 15px; font-weight: 700" class="location">
+                                        Starts at ₹ <?php if ($featured_trip->sale_price == 0.00) {
+                                                        echo $featured_trip->price;
+                                                    } else {
+                                                        echo $featured_trip->sale_price;
+                                                    }    ?>
+                                    </p>
+
+                                </div>
+                                <h2 class="trip-title"><?php echo str_replace(" ","<br  >",$featured_trip->title); ?></h2>
+                            </a>
+                        </div>
+
+                    <?php endforeach; ?>
 
                 </div>
                 <!-- If we need pagination -->
                 <!-- <div class="swiper-pagination"></div> -->
 
                 <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
 
                 <!-- If we need scrollbar -->
                 <!-- <div class="swiper-scrollbar"></div> -->
             </div>
 
-            
+            <div class="text-center see-all-block">
+                <a href="<?php echo site_url('all-trips') ?>" class="btn btn-custom">
+                    see all
+                </a>
+            </div>
 
         </div>
-
     </section>
 
     <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">

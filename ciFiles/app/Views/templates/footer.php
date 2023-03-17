@@ -42,10 +42,10 @@ bottom: 8em;">
                         <a href="<?php echo site_url('all-trips') ?> ">All Trips</a>
                     </li>
                     <li>
-                        <a href="{{url('about')?> ">About</a>
+                        <a href="<?php echo site_url('about') ?>">About</a>
                     </li>
                     <li>
-                        <a href="{{url('contact')?> ">Contact</a>
+                        <a href="<?php echo site_url('contact') ?>">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -58,10 +58,10 @@ bottom: 8em;">
                     <li>
                         <a href="mailto:hello@travelbuddys.in">Email</a>
                     </li>
-                    <!-- <li>
-                        <a href="#">YouTube</a>
-                    </li>
                     <li>
+                        <a href="https://www.facebook.com/travelbuddystoursandevents">Facebook</a>
+                    </li>
+                    <!--<li>
                         <a href="#">LinkedIn</a>
                     </li> -->
                 </ul>
@@ -70,10 +70,10 @@ bottom: 8em;">
                 <h3 class="footer-link-title">Footer Links</h3>
                 <ul class="footer-link-list">
                     <li>
-                        <a href="#">Terms and Conditions</a>
+                        <a href="<?php echo site_url("terms-and-conditions"); ?>">Terms and Conditions</a>
                     </li>
                     <li>
-                        <a href="#">Privacy Policy</a>
+                        <a href="<?php echo site_url("privacy-policy"); ?>">Privacy Policy</a>
                     </li>
                     <!-- <li>
                         <a href="#">Footer Link</a>
@@ -94,17 +94,31 @@ bottom: 8em;">
             <div class="col-lg-4 col-md-12 col-sm-12">
                 <h3 class="footer-link-title">QUICK MENU</h3>
                 <ul class="footer-link-list">
-                    <li>
+                <li>
                         <a href="<?php echo site_url('') ?> ">Home</a>
                     </li>
                     <li>
                         <a href="<?php echo site_url('all-trips') ?> ">All Trips</a>
                     </li>
                     <li>
-                        <a href="{{url('about')?> ">About</a>
+                        <a href="<?php echo site_url('about') ?>">About</a>
                     </li>
                     <li>
-                        <a href="{{url('contact')?> ">Contact</a>
+                        <a href="<?php echo site_url('contact') ?>">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-lg-4 col-md-12 col-sm-12">
+                <h3 class="footer-link-title">Footer Links</h3>
+                <ul class="footer-link-list">
+                <li>
+                        <a href="https://instagram.com/travelbuddystoursandevents">Instagram</a>
+                    </li>
+                    <li>
+                        <a href="mailto:hello@travelbuddys.in">Email</a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/travelbuddystoursandevents">Facebook</a>
                     </li>
                 </ul>
             </div>
@@ -112,27 +126,10 @@ bottom: 8em;">
                 <h3 class="footer-link-title">Footer Links</h3>
                 <ul class="footer-link-list">
                     <li>
-                        <a href="#">Facebook</a>
+                        <a href="<?php echo site_url("terms-and-conditions"); ?>">Terms and Conditions</a>
                     </li>
                     <li>
-                        <a href="#">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="#">YouTube</a>
-                    </li>
-                    <li>
-                        <a href="#">LinkedIn</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-lg-4 col-md-12 col-sm-12">
-                <h3 class="footer-link-title">Footer Links</h3>
-                <ul class="footer-link-list">
-                    <li>
-                        <a href="#">Terms and Conditions</a>
-                    </li>
-                    <li>
-                        <a href="#">Privacy Policy</a>
+                        <a href="<?php echo site_url("privacy-policy"); ?>">Privacy Policy</a>
                     </li>
                 </ul>
             </div>
